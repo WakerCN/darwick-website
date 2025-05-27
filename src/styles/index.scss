@@ -6,14 +6,26 @@ body,
   height: 100vh;
   width: 100vw;
   color: rgba(0, 0, 0, 0.88);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
 }
 
-// .webMain {
-//   height: 2000px;
-//   background: palegreen;
-// }
+* {
+  box-sizing: border-box;
+}
 
-// .webFooter {
-//   height: 300px;
-//   background: papayawhip;
-// }
+.webMain {
+  height: 1000px;
+  width: 100%;
+  background: palegreen;
+}
+
+.webFooter {
+  height: 300px;
+  background: papayawhip;
+}
