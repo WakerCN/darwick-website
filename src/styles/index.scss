@@ -5,9 +5,18 @@ body,
   padding: 0;
   height: 100vh;
   width: 100vw;
+  min-width: 900px;
   color: rgba(0, 0, 0, 0.88);
   overflow-y: auto;
 
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
+}
+
+.webMain {
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
@@ -20,12 +29,16 @@ body,
 }
 
 .webMain {
-  height: 1000px;
+  height: calc(100% - 100px);
   width: 100%;
-  background: palegreen;
+  overflow-y: auto;
 }
 
-.webFooter {
-  height: 300px;
-  background: papayawhip;
+// 字体图标
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }

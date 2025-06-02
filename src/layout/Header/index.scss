@@ -1,0 +1,21 @@
+.webHeader {
+  padding: 10px 20px;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 99999;
+
+  .websiteIcon {
+    height: 100%;
+    background: url('../assets/logo.jpg');
+  }
+
+  .header-operate {
+    .opt-btn {
+      margin-right: 10px;
+    }
+  }
+}
