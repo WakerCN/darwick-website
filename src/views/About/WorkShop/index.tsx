@@ -6,7 +6,7 @@ const WorkshopPage = () => {
     <Row className="workshop" gutter={[20, 20]}>
       {workPictureList.map((item) => {
         return (
-          <Col span={8}>
+          <Col span={8} xs={24} sm={24} md={12} lg={12} xl={8} xxl={8}>
             <Image
               src={item.url}
               width={'100%'}

@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-02 10:29
+ * @LastEditTime : 2025-06-03 20:42
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -49,11 +49,8 @@ export const Home: React.FC = () => {
               return (
                 <div className="image-item" key={item.title}>
                   <Image
-                    style={{
-                      width: '700px',
-                      height: '400px',
-                      objectFit: 'cover'
-                    }}
+                    width={'100%'}
+                    style={{ objectFit: 'cover' }}
                     src={item.url}
                   />
                 </div>
@@ -110,7 +107,17 @@ export const Home: React.FC = () => {
                 break;
             }
             return (
-              <Col className="business-card" span={12} key={bItem.type}>
+              <Col
+                className="business-card"
+                span={12}
+                xs={24}
+                sm={24}
+                md={24}
+                lg={24}
+                xl={12}
+                xxl={12}
+                key={bItem.type}
+              >
                 <div className="card-content">
                   <div className="card-title">{bItem.type}</div>
                   <div className="card-desc">{descElem}</div>
