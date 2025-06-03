@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-02 10:41
- * @LastEditTime : 2025-06-03 13:37
+ * @LastEditTime : 2025-06-03 14:10
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -13,6 +13,7 @@ import Service from '@/views/service/index.tsx';
 import RepairPage from '@/views/service/Repair/index.tsx';
 import ContactPage from '@/views/service/Contact/index.tsx';
 import AboutPage from '@/views/About/AboutPage.tsx';
+import WorkshopPage from '@/views/About/WorkShop/index.tsx';
 
 export const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
           {
             index: true,
             path: 'workshop',
-            Component: () => <div>workshop</div>
+            Component: WorkshopPage
           },
           {
             path: 'certificate',

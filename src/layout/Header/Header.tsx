@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 10:45
- * @LastEditTime : 2025-06-03 13:42
+ * @LastEditTime : 2025-06-03 14:06
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -45,7 +45,9 @@ export function Header() {
         <Button className="opt-btn" onClick={() => handleClick('about')}>
           关于我们
         </Button>
-        <Button className="opt-btn">联系方式</Button>
+        <Button className="opt-btn" onClick={() => handleClick('contact')}>
+          联系方式
+        </Button>
         <Button className="opt-btn">English</Button>
       </div>
     </div>
