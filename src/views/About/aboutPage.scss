@@ -1,0 +1,19 @@
+.about-view {
+  min-height: calc(100vh - 100px - 200px);
+  @include common.view-padding;
+
+  .content {
+    display: flex;
+    height: 100%;
+
+    .aside {
+      width: 200px;
+      height: 100%;
+    }
+
+    .right {
+      width: calc(100% - 200px);
+      padding: 0 20px;
+    }
+  }
+}

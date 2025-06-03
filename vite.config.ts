@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 10:45
- * @LastEditTime : 2025-05-27 15:08
+ * @LastEditTime : 2025-06-03 09:06
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -20,11 +20,11 @@ export default defineConfig({
       '@': '/src'
     }
   },
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `@use "@/styles/common.scss";`
-  //     }
-  //   }
-  // }
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use '@/styles/common' as common;`
+      }
+    }
+  }
 });
