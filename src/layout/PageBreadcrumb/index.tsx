@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 09:10
- * @LastEditTime : 2025-06-03 10:13
+ * @LastEditTime : 2025-06-04 09:46
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -11,16 +11,18 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import './index.scss';
 import { routerName } from '@/routers';
+import { HomeFilled } from '@ant-design/icons';
+
+const homeItem = { title: <HomeFilled />, href: '/' };
 
 export const PageBreadcrumb: React.FC = () => {
   const location = useLocation();
 
   const [items, setItems] = useState<Array<BreadcrumbItemType>>([
-    { title: '首页', href: '/' }
+    { title: <HomeFilled />, href: '/' }
   ]);
 
   useEffect(() => {
-    const homeItem = { title: '首页', href: '/' };
     const resItems: Array<BreadcrumbItemType> = [homeItem];
 
     const paths = location.pathname

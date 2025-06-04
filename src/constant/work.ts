@@ -1,9 +1,16 @@
+/*
+ * @Author       : 魏威
+ * @Date         : 2025-05-30 16:41
+ * @LastEditTime : 2025-06-04 09:09
+ * @LastEditors  : StarOne
+ * @Description  : 
+ */
 import pic2 from '@/assets/work/02-ash-grit-blasting.jpg';
 import pic3 from '@/assets/work/03-balance-test.jpg';
 import pic4 from '@/assets/work/04-measuring.jpg';
 import pic5 from '@/assets/work/05-turbo-blade-repairs.jpg';
 import pic6 from '@/assets/work/06-LaserWeldingForBlades.jpg';
-import pic8 from '@/assets/work/08-LaserAidedReclamation.jpg';
+import pic8 from '@/assets/work/08-LaserAidedReclamation.png';
 import pic9 from '@/assets/work/09-governor-overhaul.jpg';
 
 export interface WrokPicture {

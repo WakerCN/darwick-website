@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-03 20:42
+ * @LastEditTime : 2025-06-04 09:48
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -40,23 +40,26 @@ export const Home: React.FC = () => {
       </DWSection>
       <DWSection title={'专业可靠的选择'}>
         <div className="section3">
-          <Carousel
-            className="image-area"
-            autoplay={{ dotDuration: true }}
-            autoplaySpeed={2000}
-          >
-            {workPictureList.map((item) => {
-              return (
-                <div className="image-item" key={item.title}>
-                  <Image
-                    width={'100%'}
-                    style={{ objectFit: 'cover' }}
-                    src={item.url}
-                  />
-                </div>
-              );
-            })}
-          </Carousel>
+          <Image.PreviewGroup>
+            <Carousel
+              className="image-area"
+              autoplay={{ dotDuration: true }}
+              autoplaySpeed={2000}
+            >
+              {workPictureList.map((item) => {
+                return (
+                  <div className="image-item" key={item.title}>
+                    <Image
+                      width={'100%'}
+                      style={{ objectFit: 'cover' }}
+                      src={item.url}
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </Image.PreviewGroup>
+
           <div className="description">
             <Typography.Text className="list-item">
               ⛑️ 工程师在三菱、曼恩和伍德沃德接受培训
