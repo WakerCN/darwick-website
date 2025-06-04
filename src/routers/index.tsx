@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-02 10:41
- * @LastEditTime : 2025-06-03 23:00
+ * @LastEditTime : 2025-06-04 11:17
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -15,6 +15,7 @@ const RepairPage = lazy(() => import('@/views/service/Repair/index.tsx'));
 const ContactPage = lazy(() => import('@/views/service/Contact/index.tsx'));
 const AboutPage = lazy(() => import('@/views/About/AboutPage.tsx'));
 const WorkshopPage = lazy(() => import('@/views/About/WorkShop/index.tsx'));
+const CompanyPage =lazy(() => import('@/views/About/Company/index.tsx'));
 
 // import RepairPage from '@/views/service/Repair/index.tsx';
 // import ContactPage from '@/views/service/Contact/index.tsx';
@@ -60,7 +61,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'company',
-            Component: () => <div>company</div>
+            Component: CompanyPage
           }
         ]
       }

@@ -1,12 +1,12 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 13:27
- * @LastEditTime : 2025-06-03 13:32
+ * @LastEditTime : 2025-06-04 11:04
  * @LastEditors  : StarOne
  * @Description  :
  */
 import { PageBreadcrumb } from '@/layout/PageBreadcrumb';
-import { Menu, type MenuProps } from 'antd';
+import { Affix, Menu, type MenuProps } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 import './aboutPage.scss';
@@ -29,24 +29,26 @@ export const AboutPage: React.FC = () => {
       <PageBreadcrumb />
       <div className="content">
         <div className="aside">
-          <Menu
-            selectedKeys={[activeKey]}
-            onClick={onClick}
-            items={[
-              {
-                label: '配件供应与维修',
-                key: '/about/workshop'
-              },
-              {
-                label: '资质认证',
-                key: '/about/certificate'
-              },
-              {
-                label: '公司简介',
-                key: '/about/company'
-              }
-            ]}
-          />
+          <Affix style={{ position: 'absolute', top: '170px', width: '200px' }}>
+            <Menu
+              selectedKeys={[activeKey]}
+              onClick={onClick}
+              items={[
+                {
+                  label: '配件供应与维修',
+                  key: '/about/workshop'
+                },
+                {
+                  label: '资质认证',
+                  key: '/about/certificate'
+                },
+                {
+                  label: '公司简介',
+                  key: '/about/company'
+                }
+              ]}
+            />
+          </Affix>
         </div>
         <div className="right">
           <Outlet />

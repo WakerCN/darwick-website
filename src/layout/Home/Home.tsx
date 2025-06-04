@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-04 09:48
+ * @LastEditTime : 2025-06-04 10:35
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -51,7 +51,7 @@ export const Home: React.FC = () => {
                   <div className="image-item" key={item.title}>
                     <Image
                       width={'100%'}
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain' }}
                       src={item.url}
                     />
                   </div>

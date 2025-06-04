@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 10:45
- * @LastEditTime : 2025-06-03 08:29
+ * @LastEditTime : 2025-06-04 10:49
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="webMain">
+      <div className="webMain" id={"WebMain"}>
         <Outlet />
         <DWFooter />
       </div>
