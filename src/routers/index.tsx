@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-02 10:41
- * @LastEditTime : 2025-06-03 14:10
+ * @LastEditTime : 2025-06-03 23:00
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -9,11 +9,17 @@
 import { createBrowserRouter } from 'react-router';
 import Home from '@/layout/Home/Home.tsx';
 import APP from '@/App.tsx';
-import Service from '@/views/service/index.tsx';
-import RepairPage from '@/views/service/Repair/index.tsx';
-import ContactPage from '@/views/service/Contact/index.tsx';
-import AboutPage from '@/views/About/AboutPage.tsx';
-import WorkshopPage from '@/views/About/WorkShop/index.tsx';
+import { lazy } from 'react';
+const Service = lazy(() => import('@/views/service/index.tsx'));
+const RepairPage = lazy(() => import('@/views/service/Repair/index.tsx'));
+const ContactPage = lazy(() => import('@/views/service/Contact/index.tsx'));
+const AboutPage = lazy(() => import('@/views/About/AboutPage.tsx'));
+const WorkshopPage = lazy(() => import('@/views/About/WorkShop/index.tsx'));
+
+// import RepairPage from '@/views/service/Repair/index.tsx';
+// import ContactPage from '@/views/service/Contact/index.tsx';
+// import AboutPage from '@/views/About/AboutPage.tsx';
+// import WorkshopPage from '@/views/About/WorkShop/index.tsx';
 
 export const router = createBrowserRouter([
   {
