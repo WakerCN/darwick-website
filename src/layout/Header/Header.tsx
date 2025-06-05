@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 10:45
- * @LastEditTime : 2025-06-04 09:33
+ * @LastEditTime : 2025-06-05 14:08
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -11,10 +11,12 @@ import './index.scss';
 import Logo from '@/assets/company-logo.png';
 import { HomeOutlined } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
 
 export function Header() {
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   const handleClick = (type: string) => {
     switch (type) {
@@ -35,6 +37,10 @@ export function Header() {
     }
   };
 
+  const changeLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'zh' ? 'en' : 'zh');
+  };
+
   return (
     <div className="webHeader">
       <div className="left">
@@ -43,7 +49,7 @@ export function Header() {
           src={Logo}
           onClick={() => handleClick('home')}
         />
-        <span className="websiteName">大威船舶</span>
+        <span className="websiteName">{t('home.company')}</span>
       </div>
       <div className="header-operate">
         <Tooltip title={'首页'}>
@@ -90,6 +96,7 @@ export function Header() {
             color="default"
             variant="filled"
             icon={<DWICon iconName="language" />}
+            onClick={changeLanguage}
           />
         </Tooltip>
       </div>
