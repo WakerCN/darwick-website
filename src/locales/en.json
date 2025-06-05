@@ -1,7 +1,29 @@
 {
   "translation": {
+    "machine": {
+      "tc": "Turbocharger",
+      "gov": "Governor",
+      "fp": "Fuel Pump",
+      "hy": "Hydraulic System"
+    },
+    "menu": {
+      "home": "Home",
+      "service": "Sevice",
+      "about": "About Us",
+      "contact": "Contact"
+    },
     "home": {
-      "company": "Darwick Marine"
+      "company": "Darwick Marine",
+      "desc": "Darwick Marine shall be your reliable service provider in the field of Marine Turbochanrger,Governor,Fuel Pump and Hydraulic System"
+    },
+    "picture": {
+      "ash": "Ash Grit Blasting",
+      "balance-test": "Balance Test",
+      "measuring": "Mesuring",
+      "turbo-blade-repairs": "Turbine Blade Repairs",
+      "laser-welding-for-blades": "Laser Welding For Blades",
+      "laser-aided-reclamation": "Laser Aided Reclamation",
+      "governor-overhaul": "Governor Overhaul"
     }
   }
 }

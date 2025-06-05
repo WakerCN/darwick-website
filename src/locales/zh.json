@@ -1,7 +1,29 @@
 {
   "translation": {
+    "machine": {
+      "tc": "涡轮增压器",
+      "gov": "调速器",
+      "fp": "燃油泵",
+      "hy": "液压系统"
+    },
+    "menu": {
+      "home": "首页",
+      "service": "服务",
+      "about": "关于我们",
+      "contact": "联系方式"
+    },
     "home": {
-      "company": "大威船舶"
+      "company": "大威船舶",
+      "desc": "您在船用涡轮增压器、调速器、燃油泵和液压系统领域的可靠服务商"
+    },
+    "picture": {
+      "ash": "打砂",
+      "balance-test": "平衡测试",
+      "measuring": "测量",
+      "turbo-blade-repairs": "涡轮叶片修理",
+      "laser-welding-for-blades": "叶片激光焊接",
+      "laser-aided-reclamation": "激光熔覆",
+      "governor-overhaul": "调速器检修"
     }
   }
 }

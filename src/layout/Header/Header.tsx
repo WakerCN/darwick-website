@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 10:45
- * @LastEditTime : 2025-06-05 14:08
+ * @LastEditTime : 2025-06-05 14:30
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -52,7 +52,7 @@ export function Header() {
         <span className="websiteName">{t('home.company')}</span>
       </div>
       <div className="header-operate">
-        <Tooltip title={'首页'}>
+        <Tooltip title={t('menu.home')}>
           <Button
             className="opt-btn"
             onClick={() => handleClick('home')}
@@ -69,7 +69,7 @@ export function Header() {
           color="default"
           variant="filled"
         >
-          服务
+          {t('menu.service')}
         </Button>
         <Button
           className="opt-btn"
@@ -78,7 +78,7 @@ export function Header() {
           color="default"
           variant="filled"
         >
-          关于我们
+          {t('menu.about')}
         </Button>
         <Button
           className="opt-btn"
@@ -87,7 +87,7 @@ export function Header() {
           color="default"
           variant="filled"
         >
-          联系方式
+          {t('menu.contact')}
         </Button>
         <Tooltip title={'中文/English'}>
           <Button

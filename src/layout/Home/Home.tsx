@@ -1,21 +1,24 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-05 14:08
+ * @LastEditTime : 2025-06-05 14:17
  * @LastEditors  : StarOne
  * @Description  :
  */
-import React from 'react';
 import PNG1 from '@/assets/home/home-png1.png';
-import './index.scss';
-import { brandList } from '@/constant/supplier';
-import BrandWall from './BrandWall';
 import { DWSection } from '@/components/DWSection/DWSection';
-import { Carousel, Col, Row, Typography, Image } from 'antd';
 import { businessList } from '@/constant/bussiness';
+import { brandList } from '@/constant/supplier';
 import { workPictureList } from '@/constant/work';
+import { Carousel, Col, Image, Row, Typography } from 'antd';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import BrandWall from './BrandWall';
+import './index.scss';
 
 export const Home: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="home-section">
       <section className="section1">
@@ -28,38 +31,33 @@ export const Home: React.FC = () => {
             <br />
             DRIVE TO THE EXCELLENCE
           </div>
-          <div className="desc-2">
-            您在船用涡轮增压器、调速器、燃油泵和
-            <br />
-            液压系统领域的可靠服务商
-          </div>
+          <div className="desc-2">{t('home.desc')}</div>
         </div>
       </section>
+
       <DWSection title={'备件服务商'}>
         <BrandWall brands={brandList} />
       </DWSection>
+
       <DWSection title={'专业可靠的选择'}>
         <div className="section3">
-          <Image.PreviewGroup>
-            <Carousel
-              className="image-area"
-              autoplay={{ dotDuration: true }}
-              autoplaySpeed={2000}
-            >
-              {workPictureList.map((item) => {
-                return (
-                  <div className="image-item" key={item.title}>
-                    <Image
-                      width={'100%'}
-                      style={{ objectFit: 'contain' }}
-                      src={item.url}
-                    />
-                  </div>
-                );
-              })}
-            </Carousel>
-          </Image.PreviewGroup>
-
+          <Carousel
+            className="image-area"
+            autoplay={{ dotDuration: true }}
+            autoplaySpeed={2000}
+          >
+            {workPictureList.map((item) => {
+              return (
+                <div className="image-item" key={item.title}>
+                  <Image
+                    width={'100%'}
+                    style={{ objectFit: 'contain' }}
+                    src={item.url}
+                  />
+                </div>
+              );
+            })}
+          </Carousel>
           <div className="description">
             <Typography.Text className="list-item">
               ⛑️ 工程师在三菱、曼恩和伍德沃德接受培训
