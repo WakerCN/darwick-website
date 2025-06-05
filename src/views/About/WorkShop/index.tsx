@@ -1,29 +1,15 @@
+/*
+ * @Author       : 魏威
+ * @Date         : 2025-06-03 14:08
+ * @LastEditTime : 2025-06-05 19:57
+ * @LastEditors  : StarOne
+ * @Description  :
+ */
 import { workPictureList } from '@/constant/work';
-import { Col, Row, Image, Typography } from 'antd';
-import './index.scss';
+import { DWPicktureGroup } from '@/components/DWPictureGroup';
 
 const WorkshopPage = () => {
-  return (
-    <Row className="workshop" gutter={[20, 20]}>
-      <Image.PreviewGroup>
-        {workPictureList.map((item) => {
-          return (
-            <Col span={8} xs={24} sm={24} md={12} lg={12} xl={8} xxl={8}>
-              <Image
-                src={item.url}
-                width={'100%'}
-                height={200}
-                style={{ objectFit: 'cover' }}
-              />
-              <div className="desc">
-                <Typography.Text>{item.title}</Typography.Text>
-              </div>
-            </Col>
-          );
-        })}
-      </Image.PreviewGroup>
-    </Row>
-  );
+  return <DWPicktureGroup items={workPictureList} />;
 };
 
 export default WorkshopPage;
