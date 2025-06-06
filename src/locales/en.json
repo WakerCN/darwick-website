@@ -10,11 +10,36 @@
       "home": "Home",
       "service": "Sevice",
       "about": "About Us",
-      "contact": "Contact"
+      "contact": "Contact",
+      "repair": "Parts Supply & Overhaul",
+      "serviceContact": "Address & Contact",
+      "workshop": "Workshop & Engineer",
+      "certification": "Certification",
+      "company": "Company Profile"
     },
     "home": {
       "company": "Darwick Marine",
-      "desc": "Darwick Marine shall be your reliable service provider in the field of Marine Turbochanrger,Governor,Fuel Pump and Hydraulic System"
+      "desc": "Darwick Marine shall be your reliable service provider in the field of Marine Turbochanrger,Governor,Fuel Pump and Hydraulic System",
+      "t1": "Spare Parts Supplier",
+      "t2": {
+        "title": "Professional And Reliable Choice",
+        "p1": "Our engineers have been trained at Mitsubishi,Man and Woodward",
+        "p2": "We employ ex-ABB and MAN engineers",
+        "p3": "Continuous training programs,ensuring they are up to date with most recent turbochargers and Governors in the market",
+        "p4": "DNV-GL ISO9001-2015 certificate"
+      },
+      "t3": {
+        "title": "Comprehensive Parts Supply and Repair Services",
+        "series": "series",
+        "type": "-type",
+        "allType": "All types",
+        "and": "and"
+      },
+      "t4": {
+        "title": "24/7 Round-The-Clock Service",
+        "p2": "Nationwide Multi-port Service",
+        "p3": "China Coastal Reliability"
+      }
     },
     "picture": {
       "ash": "Ash Grit Blasting",
@@ -24,6 +49,14 @@
       "laser-welding-for-blades": "Laser Welding For Blades",
       "laser-aided-reclamation": "Laser Aided Reclamation",
       "governor-overhaul": "Governor Overhaul"
+    },
+    "footer": {
+      "address": "address",
+      "addressDetail": "No1 Chuangye road,Longshan street,Liuheng island,Zhoushan city,Zhejiang province,China",
+      "postal": "Postal Code",
+      "postalDetail": "316131",
+      "email": "E-mail",
+      "emailDetail": "info@darwickmarine.com"
     }
   }
 }

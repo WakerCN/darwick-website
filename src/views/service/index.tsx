@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 08:38
- * @LastEditTime : 2025-06-04 11:05
+ * @LastEditTime : 2025-06-06 22:35
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -10,11 +10,15 @@ import { Affix, Menu, type MenuProps } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 import './index.scss';
+import { useTranslation } from 'react-i18next';
 
 export const ServiceView: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
   const [activeKey, setActiveKey] = useState('service/repair');
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     setActiveKey(location.pathname);
@@ -35,11 +39,11 @@ export const ServiceView: React.FC = () => {
               onClick={onClick}
               items={[
                 {
-                  label: '配件供应与维修',
+                  label: t('menu.repair'),
                   key: '/service/repair'
                 },
                 {
-                  label: '服务地址与联系方式',
+                  label: t('menu.serviceContact'),
                   key: '/service/contact'
                 }
               ]}

@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-28 09:26
- * @LastEditTime : 2025-05-28 09:26
+ * @LastEditTime : 2025-06-06 21:14
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -19,7 +19,7 @@ export const DWSection: React.FC<DWSectionProps> = (props) => {
 
   return (
     <section className="DWSection">
-      <Typography.Title level={4}>{title}</Typography.Title>
+      <Typography.Title level={2}>{title}</Typography.Title>
       {children}
     </section>
   );

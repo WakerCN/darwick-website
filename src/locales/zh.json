@@ -10,11 +10,36 @@
       "home": "首页",
       "service": "服务",
       "about": "关于我们",
-      "contact": "联系方式"
+      "contact": "联系方式",
+      "repair": "备件供应与维修",
+      "serviceContact": "服务地址与联系方式",
+      "workshop": "车间设施与工程师",
+      "certification": "资质认证",
+      "company": "公司简介"
     },
     "home": {
       "company": "大威船舶",
-      "desc": "您在船用涡轮增压器、调速器、燃油泵和液压系统领域的可靠服务商"
+      "desc": "您在船用涡轮增压器、调速器、燃油泵和液压系统领域的可靠服务商",
+      "t1": "备件服务商",
+      "t2": {
+        "title": "专业可靠的选择",
+        "p1": "工程师在三菱、曼恩和伍德沃德接受培训",
+        "p2": "聘请前ABB和曼恩工程师",
+        "p3": "持续的工程师培训计划，确保与市场上最新的涡轮增压和调速器保持同步",
+        "p4": "DNV-GL ISO9001-2015 认证"
+      },
+      "t3": {
+        "title": "丰富全面的配件供应与维修服务",
+        "series": "系列",
+        "type": "型",
+        "allType": "所有类型",
+        "and": "和"
+      },
+      "t4": {
+        "title": "7天24小时全天服务",
+        "p2": "全国多个港口城市服务点",
+        "p3": "您在中国沿海可靠伙伴"
+      }
     },
     "picture": {
       "ash": "打砂",
@@ -24,6 +49,14 @@
       "laser-welding-for-blades": "叶片激光焊接",
       "laser-aided-reclamation": "激光熔覆",
       "governor-overhaul": "调速器检修"
+    },
+    "footer": {
+      "address": "地址",
+      "addressDetail": "浙江省舟山市六横龙山创业路1号",
+      "postal": "邮编",
+      "postalDetail": "316131",
+      "email": "邮箱",
+      "emailDetail": "info@darwickmarine.com"
     }
   }
 }

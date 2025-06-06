@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 13:27
- * @LastEditTime : 2025-06-04 11:04
+ * @LastEditTime : 2025-06-06 22:28
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -10,11 +10,15 @@ import { Affix, Menu, type MenuProps } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 import './aboutPage.scss';
+import { useTranslation } from 'react-i18next';
 
 export const AboutPage: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
   const [activeKey, setActiveKey] = useState('about/workshop');
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     setActiveKey(location.pathname);
@@ -35,15 +39,15 @@ export const AboutPage: React.FC = () => {
               onClick={onClick}
               items={[
                 {
-                  label: '配件供应与维修',
+                  label: t('menu.workshop'),
                   key: '/about/workshop'
                 },
                 {
-                  label: '资质认证',
+                  label: t('menu.certification'),
                   key: '/about/certificate'
                 },
                 {
-                  label: '公司简介',
+                  label: t('menu.company'),
                   key: '/about/company'
                 }
               ]}

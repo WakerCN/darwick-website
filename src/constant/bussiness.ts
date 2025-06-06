@@ -7,6 +7,7 @@
  */
 
 interface Business {
+  key: string;
   type: string;
   iconName: string;
   pic?: string;
@@ -15,18 +16,22 @@ interface Business {
 
 export const businessList: Array<Business> = [
   {
+    key: 'tc',
     type: '涡轮增压器',
     iconName: 'turbocharger'
   },
   {
+    key: 'gov',
     type: '调速器',
     iconName: 'governor'
   },
   {
+    key: 'fp',
     type: '燃油泵',
     iconName: 'pump'
   },
   {
+    key: 'hy',
     type: '液压系统',
     iconName: 'hydraulic-system'
   }

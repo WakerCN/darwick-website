@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-02 10:41
- * @LastEditTime : 2025-06-04 11:17
+ * @LastEditTime : 2025-06-06 22:48
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -15,7 +15,7 @@ const RepairPage = lazy(() => import('@/views/service/Repair/index.tsx'));
 const ContactPage = lazy(() => import('@/views/service/Contact/index.tsx'));
 const AboutPage = lazy(() => import('@/views/About/AboutPage.tsx'));
 const WorkshopPage = lazy(() => import('@/views/About/WorkShop/index.tsx'));
-const CompanyPage =lazy(() => import('@/views/About/Company/index.tsx'));
+const CompanyPage = lazy(() => import('@/views/About/Company/index.tsx'));
 
 // import RepairPage from '@/views/service/Repair/index.tsx';
 // import ContactPage from '@/views/service/Contact/index.tsx';
@@ -72,30 +72,37 @@ export const router = createBrowserRouter([
 export const routerName = [
   {
     path: 'service',
-    name: '服务'
+    name: '服务',
+    i18nName: 'service'
   },
   {
     path: 'repair',
-    name: '备件供应与维修'
+    name: '备件供应与维修',
+    i18nName: 'repair'
   },
   {
     path: 'contact',
-    name: '服务地址与联系方式'
+    name: '服务地址与联系方式',
+    i18nName: 'serviceContact'
   },
   {
     path: 'about',
-    name: '关于我们'
+    name: '关于我们',
+    i18nName: 'about'
   },
   {
     path: 'workshop',
-    name: '车间设施与工程师'
+    name: '车间设施与工程师',
+    i18nName: 'workshop'
   },
   {
     path: 'certificate',
-    name: '资质认证'
+    name: '资质认证',
+    i18nName: 'certification'
   },
   {
     path: 'company',
-    name: '公司简介'
+    name: '公司简介',
+    i18nName: 'company'
   }
 ];

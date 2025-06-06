@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-05 14:17
+ * @LastEditTime : 2025-06-06 22:38
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -35,11 +35,11 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <DWSection title={'备件服务商'}>
+      <DWSection title={t('home.t1')}>
         <BrandWall brands={brandList} />
       </DWSection>
 
-      <DWSection title={'专业可靠的选择'}>
+      <DWSection title={t('home.t2.title')}>
         <div className="section3">
           <Carousel
             className="image-area"
@@ -60,22 +60,22 @@ export const Home: React.FC = () => {
           </Carousel>
           <div className="description">
             <Typography.Text className="list-item">
-              ⛑️ 工程师在三菱、曼恩和伍德沃德接受培训
+              ⛑️ {t('home.t2.p1')}
             </Typography.Text>
             <Typography.Text className="list-item">
-              ⛑️ 聘请前ABB和曼恩工程师
+              ⛑️ {t('home.t2.p2')}
             </Typography.Text>
             <Typography.Text className="list-item">
-              ⚙️
-              持续的工程师培训计划，确保与市场上最新的涡轮增压和调速器保持同步
+              ⚙️ {t('home.t2.p3')}
             </Typography.Text>
             <Typography.Text className="list-item">
-              📃 DNV-GL ISO9001-2015 认证
+              ⚙️ {t('home.t2.p4')}
             </Typography.Text>
           </div>
         </div>
       </DWSection>
-      <DWSection title={'丰富全面的配件供应与维修服务'}>
+
+      <DWSection title={t('home.t3.title')}>
         <Row className="business-area" gutter={[10, 10]}>
           {businessList.map((bItem) => {
             let descElem = null;
@@ -83,11 +83,13 @@ export const Home: React.FC = () => {
               case '涡轮增压器':
                 descElem = (
                   <div>
-                    ⚙️ ABB VTR0/1、TPL、A 型系列
+                    ⚙️ ABB VTR0/1、TPL、A{t('home.t3.type')}{' '}
+                    {t('home.t3.series')}
                     <br />
-                    ⚙️ MAN 系列 NR、NA、TCA、TCR、MET
+                    ⚙️ MAN {t('home.t3.series')} NR、NA、TCA、TCR、MET
                     <br />
-                    ⚙️ NAPIER 和 MAK、KBB 系列...
+                    ⚙️ NAPIER {t('home.t3.and')} MAK、KBB {t('home.t3.series')}
+                    ...
                   </div>
                 );
                 break;
@@ -99,10 +101,10 @@ export const Home: React.FC = () => {
                 );
                 break;
               case '燃油泵':
-                descElem = <div>所有类型</div>;
+                descElem = <div>⚙️ {t('home.t3.allType')}</div>;
                 break;
               case '液压系统':
-                descElem = <div>所有类型</div>;
+                descElem = <div>⚙️ {t('home.t3.allType')}</div>;
                 break;
               default:
                 break;
@@ -120,7 +122,7 @@ export const Home: React.FC = () => {
                 key={bItem.type}
               >
                 <div className="card-content">
-                  <div className="card-title">{bItem.type}</div>
+                  <div className="card-title">{t(`machine.${bItem.key}`)}</div>
                   <div className="card-desc">{descElem}</div>
                 </div>
               </Col>
@@ -128,7 +130,8 @@ export const Home: React.FC = () => {
           })}
         </Row>
       </DWSection>
-      <DWSection title={'7天24小时全天候服务'}>
+
+      <DWSection title={t('home.t4.title')}>
         <div className="section4">
           <div className="left-pic" />
           <div className="description">
@@ -137,7 +140,7 @@ export const Home: React.FC = () => {
                 <use xlinkHref="#icon-_24h"></use>
               </svg>
               <Typography.Text className="list-item">
-                提供 7 天 24 全天服务
+                {t('home.t4.title')}
               </Typography.Text>
             </div>
             <div className="card-item">
@@ -145,7 +148,7 @@ export const Home: React.FC = () => {
                 <use xlinkHref="#icon-city"></use>
               </svg>
               <Typography.Text className="list-item">
-                全国多个港口城市服务点
+                {t('home.t4.p2')}
               </Typography.Text>
             </div>
             <div className="card-item">
@@ -153,7 +156,7 @@ export const Home: React.FC = () => {
                 <use xlinkHref="#icon-hand"></use>
               </svg>
               <Typography.Text className="list-item">
-                您在中国沿海可靠伙伴
+                {t('home.t4.p3')}
               </Typography.Text>
             </div>
           </div>

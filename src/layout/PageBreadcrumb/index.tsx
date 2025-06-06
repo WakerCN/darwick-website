@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 09:10
- * @LastEditTime : 2025-06-04 09:46
+ * @LastEditTime : 2025-06-06 22:49
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -12,11 +12,14 @@ import { useLocation } from 'react-router';
 import './index.scss';
 import { routerName } from '@/routers';
 import { HomeFilled } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 
 const homeItem = { title: <HomeFilled />, href: '/' };
 
 export const PageBreadcrumb: React.FC = () => {
   const location = useLocation();
+
+  const { t } = useTranslation();
 
   const [items, setItems] = useState<Array<BreadcrumbItemType>>([
     { title: <HomeFilled />, href: '/' }
@@ -29,7 +32,9 @@ export const PageBreadcrumb: React.FC = () => {
       .split('/')
       .slice(1)
       .map((item) => {
-        return { title: routerName.find((i) => i.path === item)?.name };
+        return {
+          title: t(`menu.${routerName.find((i) => i.path === item)?.i18nName}`)
+        };
       });
     setItems([...resItems, ...paths]);
   }, [location.pathname]);
