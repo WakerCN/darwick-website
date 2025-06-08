@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-02 10:41
- * @LastEditTime : 2025-06-08 10:17
+ * @LastEditTime : 2025-06-08 14:09
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -19,6 +19,7 @@ const CompanyPage = lazy(() => import('@/views/About/Company/index.tsx'));
 const CertificatePage = lazy(
   () => import('@/views/About/Certificate/index.tsx')
 );
+const BusinessPage = lazy(() => import('@/views/About/Business/index.tsx'));
 
 // import RepairPage from '@/views/service/Repair/index.tsx';
 // import ContactPage from '@/views/service/Contact/index.tsx';
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
           {
             path: 'company',
             Component: CompanyPage
+          },
+          {
+            path: 'business',
+            Component: BusinessPage
           }
         ]
       }
@@ -107,5 +112,10 @@ export const routerName = [
     path: 'company',
     name: '公司简介',
     i18nName: 'company'
+  },
+  {
+    path: 'business',
+    name: '业绩历史',
+    i18nName: 'business'
   }
 ];

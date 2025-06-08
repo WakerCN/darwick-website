@@ -1,10 +1,11 @@
 .about-view {
+  // height: calc(100vh - 100px);
   min-height: calc(100vh - 100px);
   @include common.view-padding;
 
   .content {
     display: flex;
-    height: 100%;
+    height: calc(100% - 32px);
 
     .aside {
       width: 200px;

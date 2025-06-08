@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 13:27
- * @LastEditTime : 2025-06-06 22:28
+ * @LastEditTime : 2025-06-08 10:31
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -49,6 +49,10 @@ export const AboutPage: React.FC = () => {
                 {
                   label: t('menu.company'),
                   key: '/about/company'
+                },
+                {
+                  label: t('menu.business'),
+                  key: '/about/business'
                 }
               ]}
             />
