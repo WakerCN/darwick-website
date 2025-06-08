@@ -6,6 +6,12 @@
       "fp": "Fuel Pump",
       "hy": "Hydraulic System"
     },
+    "base": {
+      "series": "series",
+      "type": "-type",
+      "allType": "All types",
+      "and": "and"
+    },
     "menu": {
       "home": "Home",
       "service": "Sevice",

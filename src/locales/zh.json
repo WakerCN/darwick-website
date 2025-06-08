@@ -6,6 +6,12 @@
       "fp": "燃油泵",
       "hy": "液压系统"
     },
+    "base": {
+      "series": "系列",
+      "type": "型",
+      "allType": "所有类型",
+      "and": "和"
+    },
     "menu": {
       "home": "首页",
       "service": "服务",
