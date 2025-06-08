@@ -68,6 +68,11 @@
       "mainContact": "Global Headquarters",
       "otherContact": "Regional Service Centers"
     },
+    "about": {
+      "g1": "Darwick Marine shall be your reliable service provider in the field of Marine Turbocharger,Governor, Fuel Pump and Hydraulic System.",
+      "g2": "Our engineers have been trained at Mitsubishi, MAN and Woodward and we employ ex-ABB and MAN Engineers, and have continuous training programs, ensuring they are up to date with most recent turbochargers and Governors in the market.",
+      "g3": "Darwick Marine is accredited to DNV-GL ISO9001-2015."
+    },
     "picture": {
       "ash": "Ash Grit Blasting",
       "balance-test": "Balance Test",
