@@ -74,7 +74,13 @@
       "turbo-blade-repairs": "涡轮叶片修理",
       "laser-welding-for-blades": "叶片激光焊接",
       "laser-aided-reclamation": "激光熔覆",
-      "governor-overhaul": "调速器检修"
+      "governor-overhaul": "调速器检修",
+
+      "c-balance-dtc": "平衡认证",
+      "c-balance-wnk": "平衡认证",
+      "c-mes": "MES 认证",
+      "c-met": "MET 认证",
+      "c-woodward": "伍德沃德 认证"
     },
     "footer": {
       "address": "地址",

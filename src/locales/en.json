@@ -74,7 +74,13 @@
       "turbo-blade-repairs": "Turbine Blade Repairs",
       "laser-welding-for-blades": "Laser Welding For Blades",
       "laser-aided-reclamation": "Laser Aided Reclamation",
-      "governor-overhaul": "Governor Overhaul"
+      "governor-overhaul": "Governor Overhaul",
+
+      "c-balance-dtc": "Balance Certificate",
+      "c-balance-wnk": "Balance Certificate",
+      "c-mes": "MES Certificate",
+      "c-met": "MET Certificate",
+      "c-woodward": "Woodward Certificate"
     },
     "footer": {
       "address": "address",
