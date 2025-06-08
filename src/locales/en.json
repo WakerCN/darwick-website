@@ -47,6 +47,26 @@
         "p3": "China Coastal Reliability"
       }
     },
+    "contact": {
+      "phone": "Phone",
+      "address": "Address",
+      "addressDetail": "No1 Chuangye road,Longshan street,Liuheng island,Zhoushan city,Zhejiang province,China",
+      "postal": "Postal Code",
+      "postalDetail": "316131",
+      "email": "E-mail",
+      "emailDetail": "info@darwickmarine.com",
+      "city": {
+        "dl": "Dalian",
+        "wh": "Weihai",
+        "qd": "Qingdao",
+        "sz": "Shenzhen",
+        "gz": "Guangzhou",
+        "gx": "Guangxi"
+      },
+      "service": "24/7 Round-The-Clock Service",
+      "mainContact": "Global Headquarters",
+      "otherContact": "Regional Service Centers"
+    },
     "picture": {
       "ash": "Ash Grit Blasting",
       "balance-test": "Balance Test",

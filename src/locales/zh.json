@@ -47,6 +47,26 @@
         "p3": "您在中国沿海可靠伙伴"
       }
     },
+    "contact": {
+      "phone": "电话",
+      "address": "地址",
+      "addressDetail": "浙江省舟山市六横龙山创业路1号",
+      "postal": "邮编",
+      "postalDetail": "316131",
+      "email": "邮箱",
+      "emailDetail": "info@darwickmarine.com",
+      "city": {
+        "dl": "大连",
+        "wh": "威海",
+        "qd": "青岛",
+        "sz": "深圳",
+        "gz": "广州",
+        "gx": "广西"
+      },
+      "service": "7天24小时竭诚为您服务",
+      "mainContact": "总部联系方式",
+      "otherContact": "分部服务地址"
+    },
     "picture": {
       "ash": "打砂",
       "balance-test": "平衡测试",
