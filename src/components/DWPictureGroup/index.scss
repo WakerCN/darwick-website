@@ -1,5 +1,15 @@
 .pic-wrap {
-  .desc {
-    text-align: center;
+  .card-wrap {
+    .card-img {
+      width: 100%;
+      height: 200px;
+      border-radius: 4px;
+      object-fit: cover;
+      overflow: hidden;
+      @include common.box-shadow;
+    }
+    .desc {
+      text-align: center;
+    }
   }
 }

@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-05 14:53
- * @LastEditTime : 2025-06-05 20:02
+ * @LastEditTime : 2025-06-08 14:31
  * @LastEditors  : StarOne
  * @Description  : 图片渲染组件
  */
@@ -25,8 +25,18 @@ export const DWPicktureGroup: React.FC<DWPicktureGroupProps> = (props) => {
       <Image.PreviewGroup>
         {items.map((item) => {
           return (
-            <Col span={8} xs={24} sm={24} md={12} lg={12} xl={8} xxl={8}>
+            <Col
+              className="card-wrap"
+              span={8}
+              xs={24}
+              sm={24}
+              md={12}
+              lg={12}
+              xl={8}
+              xxl={8}
+            >
               <Image
+                className="card-img"
                 src={item.url}
                 width={'100%'}
                 height={200}
