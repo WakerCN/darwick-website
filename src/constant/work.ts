@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-30 16:41
- * @LastEditTime : 2025-06-05 14:56
+ * @LastEditTime : 2025-06-08 14:42
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -10,8 +10,11 @@ import pic3 from '@/assets/work/03-balance-test.jpg';
 import pic4 from '@/assets/work/04-measuring.jpg';
 import pic5 from '@/assets/work/05-turbo-blade-repairs.jpg';
 import pic6 from '@/assets/work/06-LaserWeldingForBlades.jpg';
-import pic8 from '@/assets/work/08-LaserAidedReclamation.png';
+import pic8 from '@/assets/work/08-LaserAidedReclamation.jpg';
 import pic9 from '@/assets/work/09-governor-overhaul.jpg';
+import pic10 from '@/assets/work/10-bench-test.jpg';
+import pic11 from '@/assets/work/11-bench-test.jpg';
+import pic12 from '@/assets/work/12-onboard.jpg';
 
 export interface Picture {
   key: string;
@@ -58,5 +61,20 @@ export const workPictureList: Array<WrokPicture> = [
     key: 'governor-overhaul',
     title: '调速器检修',
     url: pic9
+  },
+  {
+    key: 'bench-test',
+    title: '台架测试',
+    url: pic10
+  },
+  {
+    key: 'bench-test',
+    title: '台架测试',
+    url: pic11
+  },
+  {
+    key: 'onboard',
+    title: '船上作业',
+    url: pic12
   }
 ];
