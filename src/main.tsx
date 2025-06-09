@@ -11,7 +11,7 @@ import { createRoot } from 'react-dom/client';
 import '@/assets/iconfont/iconfont.js';
 import { RouterProvider } from 'react-router';
 import { router } from './routers/index.tsx';
-import './locales/i18n.ts'
+import './locales/i18n.ts';
 
 createRoot(document.getElementById('root')!).render(
   <RouterProvider router={router} />
