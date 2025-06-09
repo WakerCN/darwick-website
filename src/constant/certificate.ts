@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-08 10:08
- * @LastEditTime : 2025-06-08 10:08
+ * @LastEditTime : 2025-06-09 08:21
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -13,8 +13,13 @@ import pic2 from '@/assets/certification/certificate-wnk.jpg';
 import pic3 from '@/assets/certification/MES.png';
 import pic4 from '@/assets/certification/MET.png';
 import pic5 from '@/assets/certification/woodward.png';
+import pic6 from '@/assets/certification/ISO.jpeg';
 
 export const certificatePictureList: Picture[] = [
+  {
+    key: 'c-iso',
+    url: pic6
+  },
   {
     key: 'c-balance-dtc',
     url: pic1
