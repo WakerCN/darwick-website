@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 10:45
- * @LastEditTime : 2025-06-08 21:51
+ * @LastEditTime : 2025-06-09 09:17
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -12,7 +12,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/',
   build: {
     outDir: 'dist',
   },
