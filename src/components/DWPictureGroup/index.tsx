@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-05 14:53
- * @LastEditTime : 2025-06-08 14:31
+ * @LastEditTime : 2025-06-08 16:05
  * @LastEditors  : StarOne
  * @Description  : 图片渲染组件
  */
@@ -13,10 +13,11 @@ import './index.scss';
 
 interface DWPicktureGroupProps {
   items: Picture[];
+  showDesc?: boolean;
 }
 
 export const DWPicktureGroup: React.FC<DWPicktureGroupProps> = (props) => {
-  const { items } = props;
+  const { items, showDesc = true } = props;
 
   const { t } = useTranslation();
 
@@ -42,9 +43,11 @@ export const DWPicktureGroup: React.FC<DWPicktureGroupProps> = (props) => {
                 height={200}
                 style={{ objectFit: 'cover' }}
               />
-              <div className="desc">
-                <Typography.Text>{t(`picture.${item.key}`)}</Typography.Text>
-              </div>
+              {showDesc && (
+                <div className="desc">
+                  <Typography.Text>{t(`picture.${item.key}`)}</Typography.Text>
+                </div>
+              )}
             </Col>
           );
         })}
