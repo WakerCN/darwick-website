@@ -22,7 +22,8 @@
       "workshop": "Workshop & Engineer",
       "certification": "Certification",
       "company": "Company Profile",
-      "business": "Business History"
+      "business": "Business History",
+      "feedback": "Feedback"
     },
     "home": {
       "company": "Darwick Marine",
@@ -68,6 +69,9 @@
       "mainContact": "Global Headquarters",
       "otherContact": "Regional Service Centers"
     },
+    "feedback": {
+      "title": "Client Feedback"
+    },
     "about": {
       "g1": "Darwick Marine shall be your reliable service provider in the field of Marine Turbocharger,Governor, Fuel Pump and Hydraulic System.",
       "g2": "Our engineers have been trained at Mitsubishi, MAN and Woodward and we employ ex-ABB and MAN Engineers, and have continuous training programs, ensuring they are up to date with most recent turbochargers and Governors in the market.",
@@ -81,6 +85,8 @@
       "laser-welding-for-blades": "Laser Welding For Blades",
       "laser-aided-reclamation": "Laser Aided Reclamation",
       "governor-overhaul": "Governor Overhaul",
+      "bench-test": "Bench Test",
+      "onboard": "Service Onboard",
 
       "c-iso": "ISO Certificate",
       "c-balance-dtc": "Balance Certificate",

@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 09:35
- * @LastEditTime : 2025-06-08 08:23
+ * @LastEditTime : 2025-06-09 10:31
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -33,7 +33,7 @@ export const RepairPage: React.FC = () => {
                 </Typography.Text>
                 <br />
                 <Typography.Text>
-                  ⚙️ MAN {t(`base.series`)}
+                  ⚙️ MAN {t(`base.series`)}{' '}
                   NR12-NR29、NA34~NA70、TCA33~TCA88、TCR12~TCR22、MET18SRC-MET26SRC、MET33~MET83/SB,SC,SD,SE
                 </Typography.Text>
                 <br />

@@ -42,3 +42,10 @@ body,
   fill: currentColor;
   overflow: hidden;
 }
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

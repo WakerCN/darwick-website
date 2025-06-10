@@ -1,0 +1,11 @@
+.feedback-pages {
+  .customer-reviews {
+    .comment-item {
+      padding: 6px 20px;
+      list-style: none;
+      @include common.box-shadow;
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+  }
+}

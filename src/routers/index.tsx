@@ -13,6 +13,7 @@ import { lazy } from 'react';
 const Service = lazy(() => import('@/views/service/index.tsx'));
 const RepairPage = lazy(() => import('@/views/service/Repair/index.tsx'));
 const ContactPage = lazy(() => import('@/views/service/Contact/index.tsx'));
+const FeedbackPage = lazy(() => import('@/views/service/Feedback/index.tsx'));
 const AboutPage = lazy(() => import('@/views/About/AboutPage.tsx'));
 const WorkshopPage = lazy(() => import('@/views/About/WorkShop/index.tsx'));
 const CompanyPage = lazy(() => import('@/views/About/Company/index.tsx'));
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
           {
             path: 'contact',
             Component: () => <ContactPage />
+          },
+          {
+            path: 'feedback',
+            Component: FeedbackPage
           }
         ]
       },
@@ -92,6 +97,11 @@ export const routerName = [
     path: 'contact',
     name: '服务地址与联系方式',
     i18nName: 'serviceContact'
+  },
+  {
+    path: 'feedback',
+    name: '服务地址与联系方式',
+    i18nName: 'feedback'
   },
   {
     path: 'about',

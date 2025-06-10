@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 08:38
- * @LastEditTime : 2025-06-06 22:35
+ * @LastEditTime : 2025-06-09 13:16
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -45,6 +45,10 @@ export const ServiceView: React.FC = () => {
                 {
                   label: t('menu.serviceContact'),
                   key: '/service/contact'
+                },
+                {
+                  label: t('menu.feedback'),
+                  key: '/service/feedback'
                 }
               ]}
             />
