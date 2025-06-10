@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 09:35
- * @LastEditTime : 2025-06-09 10:31
+ * @LastEditTime : 2025-06-10 09:34
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -11,6 +11,8 @@ import { businessList } from '@/constant/bussiness';
 import { DWICon } from '@/components/DWIcon';
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
+
+const { Text } = Typography;
 
 export const RepairPage: React.FC = () => {
   const { t } = useTranslation();
@@ -28,28 +30,51 @@ export const RepairPage: React.FC = () => {
             {bItem.type === '涡轮增压器' && (
               <div>
                 <Typography.Text>
-                  ⚙️ ABBVTR0/1、VTR4/P.D.E、VTC4/P、TPS48-61、TPL61-90、A
+                  🌀 ABB VTR0/1、VTR4/P.D.E、VTC4/P、TPS48-61、TPL61-90、A
                   {t(`base.type`)} {t(`base.series`)};
                 </Typography.Text>
                 <br />
                 <Typography.Text>
-                  ⚙️ MAN {t(`base.series`)}{' '}
+                  🌀 MAN {t(`base.series`)}{' '}
                   NR12-NR29、NA34~NA70、TCA33~TCA88、TCR12~TCR22、MET18SRC-MET26SRC、MET33~MET83/SB,SC,SD,SE
                 </Typography.Text>
                 <br />
                 <Typography.Text>
-                  ⚙️ NAPIER {t(`base.and`)} MAK、KBB {t(`base.series`)}
+                  🌀 NAPIER {t(`base.and`)} MAK、KBB {t(`base.series`)}
                 </Typography.Text>
               </div>
             )}
             {bItem.type === '调速器' && (
               <div>
-                <Typography.Text>
-                  ⚙️ WOODWARD {t(`base.series`)}
+                {/* <Typography.Text>
+                  cc {t(`base.series`)}
                   、SG、PSG、UG8、UG40、PGA12-PGA58、PGA200-PGA500、RHD{' '}
                   {t(`base.series`)}、NZ {t(`base.series`)}、OBAMA
                   EUROPA、1102、1115、2231 {t(`base.series`)}
-                </Typography.Text>
+                </Typography.Text> */}
+                <Text>
+                  🎛️ WOODWARD
+                  <br />
+                  UG {t('base.series')}: UG5.7、UG8、UG10、UG15、UG25、UG40
+                  <br />
+                  {'   '}UG {t('base.series')}: UG8L、UG40L
+                  <br />
+                  {'   '}PGA {t('base.series')}
+                  :PGA12、PGA16、PGA29、PGA58、PGA70、PGA200、PGA300、PGA500
+                  <br />
+                  🎛️ ZEXEL
+                  <br />
+                  RDH {t('base.series')}: RDH6、RDH10
+                  <br />
+                  🎛️ YANMAR
+                  <br />
+                  NZ {t('base.series')}: NZ50、NZ61
+                  <br />
+                  🎛️ Other Type
+                  <br />
+                  OBAMA EUROPA 2800{t('base.type')}、1102、1115、2231{' '}
+                  {t('base.series')}
+                </Text>
               </div>
             )}
             {bItem.type === '燃油泵' && (
