@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-02 10:41
- * @LastEditTime : 2025-06-08 14:09
+ * @LastEditTime : 2025-06-10 10:14
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -100,7 +100,7 @@ export const routerName = [
   },
   {
     path: 'feedback',
-    name: '服务地址与联系方式',
+    name: '客户反馈',
     i18nName: 'feedback'
   },
   {

@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-03 09:10
- * @LastEditTime : 2025-06-06 22:49
+ * @LastEditTime : 2025-06-10 10:15
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -19,7 +19,7 @@ const homeItem = { title: <HomeFilled />, href: '/' };
 export const PageBreadcrumb: React.FC = () => {
   const location = useLocation();
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [items, setItems] = useState<Array<BreadcrumbItemType>>([
     { title: <HomeFilled />, href: '/' }
@@ -37,7 +37,7 @@ export const PageBreadcrumb: React.FC = () => {
         };
       });
     setItems([...resItems, ...paths]);
-  }, [location.pathname]);
+  }, [location.pathname, i18n.language]);
 
   return <Breadcrumb className="page-breadcrumb" items={items} />;
 };
