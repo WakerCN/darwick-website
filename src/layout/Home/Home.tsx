@@ -1,18 +1,18 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-06 22:38
+ * @LastEditTime : 2025-06-13 10:05
  * @LastEditors  : StarOne
  * @Description  :
  */
-import PNG1 from '@/assets/home/home-png1.png';
 import { DWSection } from '@/components/DWSection/DWSection';
 import { businessList } from '@/constant/bussiness';
 import { brandList } from '@/constant/supplier';
 import { workPictureList } from '@/constant/work';
-import { Carousel, Col, Image, Row, Typography } from 'antd';
+import { Carousel, Col, Flex, Image, Row, Typography } from 'antd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { ReactTyped } from 'react-typed';
 import BrandWall from './BrandWall';
 import './index.scss';
 
@@ -22,17 +22,28 @@ export const Home: React.FC = () => {
   return (
     <div className="home-section">
       <section className="section1">
-        <div className="img1-area">
-          <img className="img1" src={PNG1} />
-        </div>
-        <div className="description">
+        <Flex className="mask" vertical align="center" justify="center">
+          <ReactTyped
+            className="web-title"
+            strings={['WE CARE ABOUT OUR PROMISIE', 'DRIVE TO THE EXCELLENCE']}
+            typeSpeed={80}
+            backDelay={3000}
+            backSpeed={0}
+            showCursor={false}
+            loop
+          />
+          <div className="web-desc">{t('home.desc')}</div>
+        </Flex>
+
+        {/* <div className="description">
           <div className="desc-1">
             WE CARE ABOUT OUR PROMISIE,
             <br />
             DRIVE TO THE EXCELLENCE
           </div>
           <div className="desc-2">{t('home.desc')}</div>
-        </div>
+        </div> */}
+        
       </section>
 
       <DWSection title={t('home.t1')}>

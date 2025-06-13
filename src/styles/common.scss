@@ -10,6 +10,10 @@
   }
 }
 
+@mixin transition($time: 0.3s) {
+  transition: all ease $time;
+}
+
 @mixin view-padding {
   padding: 40px 80px;
 }
