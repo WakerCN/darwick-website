@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-13 10:55
+ * @LastEditTime : 2025-06-13 14:03
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
 
   const isEn = i18n.language === 'en';
 
-  const handleJump = () => {
+  const handleJumpRepair = () => {
     navigate('/service/repair');
   };
 
@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
                 xl={12}
                 xxl={12}
                 key={bItem.type}
-                onClick={handleJump}
+                onClick={handleJumpRepair}
               >
                 <div className="card-content">
                   <Flex
@@ -164,35 +164,56 @@ export const Home: React.FC = () => {
       </DWSection>
 
       <DWSection title={t('home.t4.title')}>
-        <div className="section4">
-          <div className="left-pic" />
-          <div className="description">
-            <div className="card-item">
-              <svg className="icon service-icon" aria-hidden="true">
-                <use xlinkHref="#icon-_24h"></use>
-              </svg>
+        <Row className="section4">
+          <Col
+            className="description"
+            span={8}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
+            xl={8}
+            xxl={8}
+          >
+            <div
+              className="card-item"
+              onClick={() => navigate('/service/contact')}
+            >
+              <DWICon className="service-icon" iconName="_24h" />
               <Typography.Text className="list-item">
                 {t('home.t4.title')}
               </Typography.Text>
             </div>
-            <div className="card-item">
-              <svg className="icon service-icon" aria-hidden="true">
-                <use xlinkHref="#icon-city"></use>
-              </svg>
+            <div
+              className="card-item"
+              onClick={() => navigate('/service/contact')}
+            >
+              <DWICon className="service-icon" iconName="city" />
               <Typography.Text className="list-item">
                 {t('home.t4.p2')}
               </Typography.Text>
             </div>
-            <div className="card-item">
-              <svg className="icon service-icon" aria-hidden="true">
-                <use xlinkHref="#icon-hand"></use>
-              </svg>
+            <div
+              className="card-item"
+              onClick={() => navigate('/service/contact')}
+            >
+              <DWICon className="service-icon" iconName="hand" />
               <Typography.Text className="list-item">
                 {t('home.t4.p3')}
               </Typography.Text>
             </div>
-          </div>
-        </div>
+          </Col>
+          <Col
+            className="right-pic"
+            span={16}
+            xs={24}
+            sm={24}
+            md={24}
+            lg={24}
+            xl={16}
+            xxl={16}
+          />
+        </Row>
       </DWSection>
     </div>
   );
