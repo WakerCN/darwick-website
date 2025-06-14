@@ -26,8 +26,8 @@
       "feedback": "Feedback"
     },
     "home": {
-      "company": "Darwick Marine",
-      "desc": "Darwick Marine shall be your reliable service provider in the field of \n Marine Turbochanrger,Governor,Fuel Pump and Hydraulic System",
+      "company": "DARWICK MARINE",
+      "desc": "DARWICK MARINE shall be your reliable service provider in the field of \n Marine Turbochanrger,Governor,Fuel Pump and Hydraulic System",
       "t1": "Spare Parts Supplier",
       "t2": {
         "title": "Professional And Reliable Choice",
@@ -96,8 +96,9 @@
       "c-woodward": "Woodward Certificate"
     },
     "footer": {
-      "address": "address",
-      "addressDetail": "No1 Chuangye road,Longshan street,Liuheng island,Zhoushan city,Zhejiang province,China",
+      "company": "DARWICK MARINE Service Co., Ltd.",
+      "address": "Address",
+      "addressDetail": "No.1 Chuangye road,Longshan street,Liuheng island,\nZhoushan city,Zhejiang province,China",
       "postal": "Postal Code",
       "postalDetail": "316131",
       "email": "E-mail",

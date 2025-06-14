@@ -32,12 +32,12 @@ export const ContactPage: React.FC = () => {
         </Typography.Title>
         <Typography.Text>
           📮 <Typography.Text strong>{t('contact.email')}：</Typography.Text>
-          info@darwickmarine.com
+          <a href="mailto:info@darwickmarine.com">info@darwickmarine.com</a>
         </Typography.Text>
         <br />
         <Typography.Text>
           ☎️ <Typography.Text strong>{t('contact.phone')}：</Typography.Text>
-          0086-13685872345
+          <a href='tel:+86 13685872345'>+86-13685872345</a>
         </Typography.Text>
         <br />
         <Typography.Text>
