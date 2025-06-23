@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 13:48
- * @LastEditTime : 2025-06-13 14:03
+ * @LastEditTime : 2025-06-23 09:55
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -38,7 +38,7 @@ export const Home: React.FC = () => {
             strings={
               isEn
                 ? ['WE CARE ABOUT OUR PROMISIE', 'DRIVE TO THE EXCELLENCE']
-                : ['我们信守承诺，追求卓越']
+                : ['我们信守承诺，追求完美']
             }
             typeSpeed={80}
             backDelay={3000}
