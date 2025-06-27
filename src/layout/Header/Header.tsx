@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-05-27 10:45
- * @LastEditTime : 2025-06-05 14:30
+ * @LastEditTime : 2025-06-27 11:32
  * @LastEditors  : StarOne
  * @Description  :
  */
@@ -9,10 +9,12 @@ import { DWICon } from '@/components/DWIcon';
 import './index.scss';
 
 import Logo from '@/assets/company-logo.png';
-import { HomeOutlined } from '@ant-design/icons';
+import { BookFilled, HomeOutlined } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router';
+
+import pdfHerf from '@/assets/大威宣传册.pdf';
 
 export function Header() {
   const navigate = useNavigate();
@@ -89,6 +91,17 @@ export function Header() {
         >
           {t('menu.contact')}
         </Button>
+        <Tooltip title={t('menu.brochure')}>
+          <Button
+            className="opt-btn"
+            size="large"
+            color="default"
+            variant="filled"
+            icon={<BookFilled />}
+            href={pdfHerf}
+            download={'DARWICK Brochure.pdf'}
+          />
+        </Tooltip>
         <Tooltip title={'中文/English'}>
           <Button
             className="opt-btn"
