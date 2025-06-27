@@ -9,19 +9,19 @@ body,
   color: rgba(0, 0, 0, 0.88);
   overflow-y: auto;
 
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background-color: transparent;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 0;
+  //   height: 0;
+  //   background-color: transparent;
+  // }
 }
 
 .webMain {
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background-color: transparent;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 0;
+  //   height: 0;
+  //   background-color: transparent;
+  // }
 }
 
 * {
