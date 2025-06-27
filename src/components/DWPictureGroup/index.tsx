@@ -1,7 +1,7 @@
 /*
  * @Author       : 魏威
  * @Date         : 2025-06-05 14:53
- * @LastEditTime : 2025-06-08 16:05
+ * @LastEditTime : 2025-06-27 11:44
  * @LastEditors  : StarOne
  * @Description  : 图片渲染组件
  */
@@ -28,6 +28,7 @@ export const DWPicktureGroup: React.FC<DWPicktureGroupProps> = (props) => {
           return (
             <Col
               className="card-wrap"
+              key={item.key}
               span={8}
               xs={24}
               sm={24}
