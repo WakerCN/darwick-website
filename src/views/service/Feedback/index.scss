@@ -1,11 +1,56 @@
+// ========================================
+// Feedback 客户反馈页面 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-gold: #d4af37;
+$_text-secondary: rgba(255, 255, 255, 0.85);
+
 .feedback-pages {
   .customer-reviews {
     .comment-item {
-      padding: 6px 20px;
+      padding: 20px 25px;
       list-style: none;
-      @include common.box-shadow;
-      margin-bottom: 10px;
-      border-radius: 6px;
+      margin-bottom: 15px;
+      
+      // 玻璃态卡片
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba($_accent-gold, 0.3);
+        box-shadow: 0 0 25px rgba($_accent-gold, 0.1);
+        transform: translateX(5px);
+      }
+      
+      // 引号装饰
+      &::before {
+        content: '"';
+        font-size: 40px;
+        font-family: Georgia, serif;
+        color: rgba($_accent-gold, 0.3);
+        line-height: 1;
+        margin-right: 10px;
+      }
+      
+      .ant-typography {
+        color: $_text-secondary !important;
+        font-style: italic;
+        
+        // 客户名称
+        &.customer-name {
+          color: $_accent-cyan !important;
+          font-style: normal;
+          font-weight: 600;
+        }
+      }
     }
   }
 }

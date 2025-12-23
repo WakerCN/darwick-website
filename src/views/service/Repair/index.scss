@@ -1,7 +1,65 @@
+// ========================================
+// Repair 维修页面 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-gold: #d4af37;
+$_text-primary: #ffffff;
+
 .repair-page {
   width: 100%;
 
   .business-item {
     margin-bottom: 50px;
+    padding: 30px;
+    
+    // 玻璃态卡片
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba($_accent-cyan, 0.2);
+      box-shadow: 0 0 30px rgba($_accent-cyan, 0.05);
+    }
+    
+    // 标题样式
+    .ant-typography {
+      color: $_text-primary !important;
+    }
+    
+    h3.ant-typography {
+      font-family: 'Orbitron', 'Rajdhani', sans-serif;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(90deg, $_accent-gold, transparent);
+      }
+    }
+    
+    // 图片样式
+    .ant-image {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      
+      &:hover {
+        border-color: rgba($_accent-cyan, 0.3);
+        box-shadow: 0 0 20px rgba($_accent-cyan, 0.1);
+      }
+    }
   }
 }
