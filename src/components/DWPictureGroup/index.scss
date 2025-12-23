@@ -1,15 +1,50 @@
+// ========================================
+// DWPictureGroup 图片组 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_text-secondary: rgba(255, 255, 255, 0.85);
+
 .pic-wrap {
   .card-wrap {
+    padding: 15px;
+    
+    // 玻璃态卡片
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba($_accent-cyan, 0.3);
+      box-shadow: 0 0 25px rgba($_accent-cyan, 0.1);
+      transform: translateY(-5px);
+      
+      .card-img {
+        transform: scale(1.03);
+      }
+    }
+    
     .card-img {
       width: 100%;
       height: 200px;
-      border-radius: 4px;
+      border-radius: 8px;
       object-fit: cover;
       overflow: hidden;
-      @include common.box-shadow;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
     }
+    
     .desc {
       text-align: center;
+      margin-top: 12px;
+      color: $_text-secondary;
+      font-size: 14px;
+      font-weight: 500;
     }
   }
 }

@@ -1,25 +1,137 @@
+// ========================================
+// Footer 页脚 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_accent-gold: #d4af37;
+$_accent-gold-light: #ffdf80;
+$_text-secondary: rgba(255, 255, 255, 0.85);
+
 .webFooter {
-  height: 200px;
-  background: #f2f2f2;
-  padding: 80px;
+  min-height: 200px;
+  padding: 60px 80px;
+  position: relative;
+  
+  // 深色玻璃态背景
+  background: linear-gradient(180deg, rgba(10, 22, 40, 0.95) 0%, rgba(5, 12, 20, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  // 顶部发光线条
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($_accent-cyan, 0.4),
+      rgba($_accent-gold, 0.4),
+      rgba($_accent-cyan, 0.4),
+      transparent
+    );
+  }
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
 
   .footer-left {
     .logo {
-      width: 100px;
+      width: 80px;
+      border-radius: 8px;
+      filter: drop-shadow(0 0 10px rgba($_accent-gold, 0.3));
+      transition: all 0.3s ease;
+      
+      &:hover {
+        filter: drop-shadow(0 0 20px rgba($_accent-gold, 0.5));
+        transform: scale(1.05);
+      }
     }
+    
     .logo-desc {
-      margin-top: 20px;
+      margin-top: 15px;
+      
+      .ant-typography {
+        font-family: 'Orbitron', 'Rajdhani', sans-serif;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: $_text-secondary !important;
+        
+        // 金色渐变
+        background: linear-gradient(135deg, $_accent-gold 0%, $_accent-gold-light 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
     }
   }
 
   .footer-right {
     .info {
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       white-space: pre-wrap;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba($_accent-cyan, 0.2);
+      }
+      
+      .ant-typography {
+        color: $_text-secondary !important;
+        font-size: 14px;
+        
+        &[class*="strong"] {
+          color: $_accent-cyan !important;
+        }
+      }
+      
+      a {
+        color: $_accent-cyan !important;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          color: $_accent-cyan-light !important;
+          text-shadow: 0 0 10px rgba($_accent-cyan, 0.5);
+        }
+      }
+    }
+  }
+}
+
+// 响应式
+@media screen and (max-width: 768px) {
+  .webFooter {
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-right {
+      width: 100%;
+      
+      .info {
+        text-align: left;
+      }
     }
   }
 }

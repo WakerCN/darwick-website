@@ -1,20 +1,121 @@
+// ========================================
+// Contact 联系页面 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_accent-gold: #d4af37;
+$_accent-gold-light: #f0d78c;
+$_text-primary: #ffffff;
+$_text-secondary: rgba(255, 255, 255, 0.85);
+
 .contact-page {
   width: 100%;
   height: 100%;
   display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
 
   .left-img {
-    width: 50%;
-    height: 500px;
+    flex: 1;
+    min-width: 300px;
+    min-height: 400px;
     background: url('../../../assets/home/24-service.png') no-repeat;
     background-size: cover;
     background-position: center right;
+    border-radius: 16px;
+    border: 1px solid rgba($_accent-cyan, 0.2);
+    box-shadow: 0 0 30px rgba($_accent-cyan, 0.1);
+    position: relative;
+    overflow: hidden;
+    
+    // 叠加渐变
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(10, 22, 40, 0.4) 0%,
+        transparent 50%,
+        rgba(10, 22, 40, 0.4) 100%
+      );
+      pointer-events: none;
+    }
   }
 
   .right-content {
-    width: 50%;
-    height: 100%;
+    flex: 1;
+    min-width: 300px;
     @include common.card-padding;
+    
+    // 玻璃态卡片
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    
+    // 标题样式
+    .ant-typography {
+      color: $_text-primary !important;
+    }
+    
+    h3.ant-typography {
+      font-family: 'Orbitron', 'Rajdhani', sans-serif;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      
+      // 金色渐变
+      background: linear-gradient(135deg, $_accent-gold 0%, $_accent-gold-light 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    // 联系信息样式
+    .contact-info {
+      margin-bottom: 15px;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba($_accent-cyan, 0.2);
+      }
+      
+      .ant-typography {
+        color: $_text-secondary !important;
+        
+        strong {
+          color: $_accent-cyan !important;
+        }
+      }
+      
+      a {
+        color: $_accent-cyan !important;
+        
+        &:hover {
+          color: $_accent-cyan-light !important;
+          text-shadow: 0 0 10px rgba($_accent-cyan, 0.5);
+        }
+      }
+    }
+  }
+}
 
+// 响应式
+@media screen and (max-width: 768px) {
+  .contact-page {
+    flex-direction: column;
+    
+    .left-img {
+      min-height: 250px;
+    }
   }
 }

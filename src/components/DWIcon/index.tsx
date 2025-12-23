@@ -4,13 +4,20 @@ interface DWIconProps {
   iconName?: string;
   className?: string;
   style?: React.CSSProperties;
+  color?: string;
 }
 
 export const DWICon: React.FC<DWIconProps> = (props) => {
-  const { iconName, className, style } = props;
+  const { iconName, className, style, color } = props;
+
+  const mergedStyle: React.CSSProperties = {
+    ...style,
+    color: color || 'currentColor',
+    fill: color || 'currentColor',
+  };
 
   return (
-    <svg className={cn('icon', className)} style={style} aria-hidden="true">
+    <svg className={cn('icon', className)} style={mergedStyle} aria-hidden="true">
       <use xlinkHref={`#icon-${iconName}`} />
     </svg>
   );

@@ -1,12 +1,37 @@
 @use './box.scss' as *;
 
+// ========================================
+// 通用混入样式 - 深邃海洋工业风
+// 注意：theme 变量通过 vite 全局注入
+// ========================================
+
+// 主色调变量（本地定义以便在 mixin 中使用）
+$_primary-dark: #0a1628;
+$_primary-medium: #1e3a5f;
+$_accent-gold: #d4af37;
+$_accent-gold-light: #f0d78c;
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_text-primary: #ffffff;
+$_text-secondary: rgba(255, 255, 255, 0.85);
+$_glass-bg: rgba(255, 255, 255, 0.08);
+$_glass-bg-hover: rgba(255, 255, 255, 0.12);
+$_glass-border: rgba(255, 255, 255, 0.15);
+$_glass-border-hover: rgba(255, 255, 255, 0.25);
+$_shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+$_shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+$_shadow-glow-cyan: 0 0 20px rgba(0, 212, 255, 0.3);
+$_shadow-glow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+$_transition-normal: 0.3s;
+$_gradient-gold: linear-gradient(135deg, $_accent-gold 0%, $_accent-gold-light 100%);
+
 @mixin box-shadow {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: $_shadow-card;
 }
 
 @mixin hover-shadow {
   &:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: $_shadow-card, $_shadow-glow-cyan;
   }
 }
 
@@ -20,4 +45,70 @@
 
 @mixin card-padding {
   padding: 20px;
+}
+
+// 玻璃态卡片
+@mixin glass-card {
+  background: $_glass-bg;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid $_glass-border;
+  border-radius: 16px;
+  transition: all $_transition-normal ease;
+  
+  &:hover {
+    background: $_glass-bg-hover;
+    border-color: $_glass-border-hover;
+    box-shadow: $_shadow-glass;
+  }
+}
+
+// 发光边框卡片
+@mixin glow-card {
+  background: $_glass-bg;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba($_accent-cyan, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba($_accent-cyan, 0.1);
+  transition: all $_transition-normal ease;
+  
+  &:hover {
+    border-color: rgba($_accent-cyan, 0.6);
+    box-shadow: 0 0 30px rgba($_accent-cyan, 0.2), 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+  }
+}
+
+// 悬浮效果
+@mixin hover-float {
+  transition: transform $_transition-normal ease, box-shadow $_transition-normal ease;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $_shadow-card, $_shadow-glow-cyan;
+  }
+}
+
+// 标题样式
+@mixin section-title {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: $_text-primary;
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 12px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: $_gradient-gold;
+    border-radius: 2px;
+    box-shadow: $_shadow-glow-gold;
+  }
 }

@@ -1,33 +1,196 @@
+// ========================================
+// Header 导航栏 - 毛玻璃效果
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_accent-gold: #d4af37;
+$_accent-gold-light: #ffdf80;
+$_text-primary: #ffffff;
+$_transition-normal: 0.3s;
+
 .webHeader {
-  padding: 10px 20px;
-  height: 100px;
+  padding: 15px 40px;
+  height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 99;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  
+  // 毛玻璃效果
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  
+  // 底部发光线条
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba($_accent-cyan, 0.5),
+      rgba($_accent-gold, 0.5),
+      rgba($_accent-cyan, 0.5),
+      transparent
+    );
+  }
 
   .left {
     height: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: all $_transition-normal ease;
+    
+    &:hover {
+      .websiteName {
+        text-shadow: 0 0 20px rgba($_accent-gold, 0.5);
+      }
+      
+      .websiteIcon {
+        filter: drop-shadow(0 0 10px rgba($_accent-gold, 0.5));
+      }
+    }
 
     .websiteIcon {
-      height: 100%;
+      height: 50px;
+      border-radius: 8px;
+      transition: all $_transition-normal ease;
     }
 
     .websiteName {
-      margin-left: 10px;
-      font-size: 36px;
-      font-weight: bolder;
+      margin-left: 15px;
+      font-family: 'Orbitron', 'Rajdhani', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: $_text-primary;
+      letter-spacing: 2px;
+      transition: all $_transition-normal ease;
+      
+      // 金色渐变文字
+      background: linear-gradient(135deg, $_accent-gold 0%, $_accent-gold-light 50%, $_accent-gold 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
   }
 
   .header-operate {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    // 所有操作按钮
     .opt-btn {
-      margin-right: 10px;
+      font-family: 'Rajdhani', 'PingFang SC', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: $_text-primary !important;
+      transition: all $_transition-normal ease;
+      
+      &:hover {
+        background: rgba($_accent-cyan, 0.15) !important;
+        border-color: rgba($_accent-cyan, 0.5) !important;
+        color: $_accent-cyan-light !important;
+        box-shadow: 0 0 20px rgba($_accent-cyan, 0.2);
+        transform: translateY(-2px);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+    }
+    
+    // 圆形按钮/图标按钮特殊样式（包括 book 和 language 按钮）
+    .opt-btn.ant-btn-circle,
+    .opt-btn.ant-btn-icon-only {
+      &:hover {
+        background: rgba($_accent-gold, 0.15) !important;
+        border-color: rgba($_accent-gold, 0.5) !important;
+        color: $_accent-gold-light !important;
+        box-shadow: 0 0 20px rgba($_accent-gold, 0.2);
+      }
+    }
+  }
+}
+
+// 全局覆盖 Header 内按钮图标颜色（需要更高优先级）
+.webHeader .header-operate {
+  // 所有 .opt-btn 内的图标
+  .opt-btn .ant-btn-icon {
+    color: $_text-primary !important;
+    
+    > span,
+    > svg,
+    .icon,
+    .anticon {
+      color: $_text-primary !important;
+      fill: $_text-primary !important;
+    }
+  }
+  
+  // hover 状态
+  .opt-btn:hover .ant-btn-icon {
+    color: $_accent-cyan-light !important;
+    
+    > span,
+    > svg,
+    .icon,
+    .anticon {
+      color: $_accent-cyan-light !important;
+      fill: $_accent-cyan-light !important;
+    }
+  }
+  
+  // 圆形/图标按钮 hover 状态
+  .opt-btn.ant-btn-circle:hover .ant-btn-icon,
+  .opt-btn.ant-btn-icon-only:hover .ant-btn-icon {
+    color: $_accent-gold-light !important;
+    
+    > span,
+    > svg,
+    .icon,
+    .anticon {
+      color: $_accent-gold-light !important;
+      fill: $_accent-gold-light !important;
+    }
+  }
+}
+
+// 响应式适配
+@media screen and (max-width: 1000px) {
+  .webHeader {
+    padding: 10px 20px;
+    
+    .left {
+      .websiteName {
+        font-size: 18px;
+        display: none;
+      }
+    }
+    
+    .header-operate {
+      gap: 4px;
+      
+      .opt-btn {
+        font-size: 13px;
+        padding: 4px 12px;
+      }
     }
   }
 }

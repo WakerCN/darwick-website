@@ -1,4 +1,64 @@
-.page-breadcrumb {
-  padding-left: 220px;
-  margin-bottom: 10px;
+// ========================================
+// PageBreadcrumb 面包屑 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_text-light: rgba(255, 255, 255, 0.9);
+$_text-muted: rgba(255, 255, 255, 0.65);
+
+// .page-breadcrumb 直接就是 .ant-breadcrumb 元素
+.page-breadcrumb.ant-breadcrumb {
+  padding-left: 250px;
+  margin-bottom: 15px;
+  
+  // 覆盖 ol 列表和 li 项的颜色
+  ol {
+    li {
+      color: $_text-muted !important;
+      
+      // 最后一项（当前页面）
+      &:last-child {
+        color: $_text-light !important;
+        
+        span {
+          color: $_text-light !important;
+        }
+      }
+      
+      // 所有 span 文字
+      span {
+        color: $_text-muted !important;
+      }
+      
+      // 链接
+      a {
+        color: $_accent-cyan !important;
+        
+        &:hover {
+          color: $_accent-cyan-light !important;
+          text-shadow: 0 0 10px rgba($_accent-cyan, 0.3);
+        }
+        
+        // 链接内的图标
+        span {
+          color: $_accent-cyan !important;
+        }
+      }
+    }
+  }
+  
+  // 分隔符
+  .ant-breadcrumb-separator {
+    color: $_text-muted !important;
+  }
+}
+
+// 响应式
+@media screen and (max-width: 900px) {
+  .page-breadcrumb.ant-breadcrumb {
+    padding-left: 0;
+    text-align: center;
+  }
 }

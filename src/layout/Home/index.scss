@@ -1,61 +1,223 @@
+// ========================================
+// 首页样式 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_accent-gold: #d4af37;
+$_accent-gold-light: #ffdf80;
+$_text-primary: #ffffff;
+$_text-secondary: rgba(255, 255, 255, 0.85);
+$_transition-normal: 0.3s;
+
 .home-section {
   padding: 40px 80px;
+  position: relative;
+  z-index: 1;
 
+  // ================================
+  // Hero区域 - 首屏大图
+  // ================================
   .section1 {
-    height: calc(100vh - 100px - 200px + 120px);
-    margin-bottom: 40px;
+    height: calc(100vh - 80px - 200px + 80px);
+    margin-bottom: 60px;
     background: url('../../assets/home/home-png1.png') no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
+    position: relative;
     @include common.transition;
+    
+    // 发光边框效果
+    border: 1px solid rgba($_accent-cyan, 0.3);
+    box-shadow: 
+      0 0 40px rgba($_accent-cyan, 0.1),
+      0 20px 60px rgba(0, 0, 0, 0.4);
 
     &:hover {
-      background-size: 115%;
+      background-size: 110%;
+      border-color: rgba($_accent-cyan, 0.5);
+      box-shadow: 
+        0 0 60px rgba($_accent-cyan, 0.2),
+        0 25px 80px rgba(0, 0, 0, 0.5);
     }
 
     .mask {
       height: 100%;
       width: 100%;
       position: relative;
-      background: rgba(0, 0, 0, 0.2);
+      background: linear-gradient(
+        135deg,
+        rgba(10, 22, 40, 0.7) 0%,
+        rgba(30, 58, 95, 0.5) 50%,
+        rgba(10, 22, 40, 0.8) 100%
+      );
+      backdrop-filter: blur(2px);
       @include common.transition;
 
       &:hover {
-        background: rgba(0, 0, 0, 0.5);
+        background: linear-gradient(
+          135deg,
+          rgba(10, 22, 40, 0.85) 0%,
+          rgba(30, 58, 95, 0.7) 50%,
+          rgba(10, 22, 40, 0.9) 100%
+        );
 
         .web-desc {
           right: 50px;
+          opacity: 1;
         }
       }
 
       > .web-title {
         margin: 0;
-        font-size: 70px;
-        font-weight: bolder;
-        color: #fff;
-        text-shadow: 10px 0px 20px rgba(0, 0, 0, 0.5);
+        font-family: 'Orbitron', 'Rajdhani', sans-serif;
+        font-size: 60px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: $_text-primary;
+        
+        // 金色渐变文字发光
+        background: linear-gradient(135deg, $_accent-gold 0%, $_accent-gold-light 50%, $_accent-gold 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        filter: drop-shadow(0 0 30px rgba($_accent-gold, 0.5));
+        
+        animation: titleGlow 3s ease-in-out infinite;
       }
 
       .web-desc {
         position: absolute;
-        color: rgba(255, 255, 255, 0.8);
-        bottom: 20px;
-        font-size: 20px;
+        color: $_text-secondary;
+        bottom: 30px;
+        font-size: 18px;
+        font-weight: 500;
         right: -100%;
+        opacity: 0;
         white-space: pre-wrap;
-        @include common.transition(1s);
-        text-shadow: 10px 0px 20px rgba(0, 0, 0, 0.05);
+        letter-spacing: 1px;
+        @include common.transition(0.8s);
+        
+        // 发光效果
+        text-shadow: 0 0 20px rgba($_accent-cyan, 0.3);
+      }
+    }
+  }
+  
+  @keyframes titleGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 30px rgba($_accent-gold, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 50px rgba($_accent-gold, 0.8));
+    }
+  }
+
+  // ================================
+  // 业务区域 - 玻璃态卡片
+  // ================================
+  .business-area {
+    .business-card {
+      height: 140px;
+      
+      .card-content {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        cursor: pointer;
+        
+        // 玻璃态效果
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        @include common.transition;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: rgba($_accent-cyan, 0.5);
+          box-shadow: 
+            0 0 30px rgba($_accent-cyan, 0.2),
+            0 12px 40px rgba(0, 0, 0, 0.3);
+          transform: translateY(-6px);
+
+          .card-title {
+            background: linear-gradient(135deg, rgba($_accent-gold, 0.3) 0%, rgba($_accent-gold, 0.15) 100%);
+            
+            span {
+              color: $_accent-gold-light;
+              text-shadow: 0 0 15px rgba($_accent-gold, 0.5);
+            }
+          }
+        }
+
+        .card-title {
+          width: 200px;
+          font-size: 20px;
+          font-weight: 600;
+          text-align: center;
+          color: $_text-primary;
+          background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+          border-right: 1px solid rgba(255, 255, 255, 0.1);
+          @include common.transition;
+          
+          span {
+            transition: all $_transition-normal ease;
+          }
+          
+          .icon {
+            color: $_accent-cyan !important;
+            filter: drop-shadow(0 0 8px rgba($_accent-cyan, 0.5));
+          }
+        }
+
+        .card-desc {
+          height: 100%;
+          flex: 1;
+          display: flex;
+          align-items: center;
+          padding: 20px 25px;
+          background: rgba(255, 255, 255, 0.03);
+          color: $_text-secondary;
+          font-size: 14px;
+          line-height: 1.8;
+        }
       }
     }
   }
 
+  // ================================
+  // 工作展示区域
+  // ================================
   .section3 {
     .image-area {
-      border-radius: 10px;
+      border-radius: 16px;
       overflow: hidden;
       margin-bottom: 20px;
+      border: 1px solid rgba($_accent-cyan, 0.2);
+      box-shadow: 0 0 30px rgba($_accent-cyan, 0.1);
+      
+      .ant-carousel {
+        .slick-dots {
+          li {
+            button {
+              background: rgba(255, 255, 255, 0.3);
+            }
+            
+            &.slick-active button {
+              background: $_accent-cyan;
+              box-shadow: 0 0 10px rgba($_accent-cyan, 0.5);
+            }
+          }
+        }
+      }
     }
 
     .description {
@@ -64,7 +226,23 @@
       flex-direction: column;
 
       .list-item {
-        margin-bottom: 16px;
+        margin-bottom: 20px;
+        padding: 15px 20px;
+        font-size: 15px;
+        color: $_text-secondary;
+        
+        // 玻璃态效果
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all $_transition-normal ease;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: rgba($_accent-cyan, 0.3);
+          transform: translateX(5px);
+        }
       }
     }
   }
@@ -74,6 +252,11 @@
       .image-area {
         width: 100%;
         height: 400px;
+      }
+      
+      .description {
+        margin-left: 0;
+        margin-top: 20px;
       }
     }
   }
@@ -90,95 +273,153 @@
     }
   }
 
-  .business-area {
-    .business-card {
-      height: 120px;
-
-      .card-content {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        background: #d0e3ec;
-        overflow: hidden;
-        display: flex;
-        cursor: pointer;
-        @include common.transition;
-
-        &:hover {
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-
-          .card-title {
-            font-size: 28px;
-          }
-        }
-
-        .card-title {
-          width: 220px;
-          font-size: 24px;
-          text-align: center;
-          color: #444444;
-          @include common.transition;
-        }
-
-        .card-desc {
-          height: 100%;
-          flex: 1;
-          display: flex;
-          align-items: center;
-          padding: 20px;
-          background: #d3dfe4;
-        }
-      }
-    }
-  }
-
+  // ================================
+  // 服务区域 - 发光卡片
+  // ================================
   .section4 {
+    // 使用 align-items: stretch 让左右两列等高
+    align-items: stretch;
+    
     .description {
       display: flex;
       flex-direction: column;
-
+      height: 600px; // 固定高度与右侧图片一致
+      padding-right: 24px; // 右侧间距
+      
       .card-item {
         width: 100%;
-        height: calc((100% - 40px) / 3);
+        flex: 1; // 平均分配高度
         margin-bottom: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: #d2e4f5;
-        border-radius: 10px;
-        padding: 20px;
+        padding: 15px 25px;
         cursor: pointer;
+        overflow: hidden; // 防止内容溢出
+        
+        // 玻璃态 + 发光边框
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 16px;
+        border: 1px solid rgba($_accent-gold, 0.2);
+        box-shadow: 0 0 20px rgba($_accent-gold, 0.05);
         @include common.transition;
+        
+        &:last-child {
+          margin-bottom: 0; // 最后一个卡片不需要底部间距
+        }
 
         &:hover {
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+          background: linear-gradient(135deg, rgba($_accent-gold, 0.15) 0%, rgba($_accent-gold, 0.05) 100%);
+          border-color: rgba($_accent-gold, 0.5);
+          box-shadow: 0 0 40px rgba($_accent-gold, 0.2);
+          transform: translateY(-5px);
+          
+          .service-icon {
+            color: $_accent-gold-light !important;
+            filter: drop-shadow(0 0 15px rgba($_accent-gold, 0.6));
+            transform: scale(1.1);
+          }
+          
+          .list-item {
+            color: $_accent-gold-light !important;
+          }
         }
 
         .service-icon {
-          font-size: 60px;
+          font-size: 50px;
+          color: $_accent-gold !important;
+          margin-bottom: 10px;
+          flex-shrink: 0; // 防止图标被压缩
+          transition: all $_transition-normal ease;
+          filter: drop-shadow(0 0 10px rgba($_accent-gold, 0.3));
         }
 
         .list-item {
-          font-size: 20px;
+          font-size: 18px;
+          font-weight: 600;
+          color: $_text-primary !important;
+          text-align: center;
+          transition: all $_transition-normal ease;
         }
       }
     }
 
     .right-pic {
       width: 800px;
-      height: 100%;
-      min-height: 600px;
+      height: 600px; // 使用固定高度替代 min-height
       background: url('../../assets/home/24-service.png') no-repeat center;
       background-size: cover;
+      border-radius: 16px;
+      border: 1px solid rgba($_accent-cyan, 0.2);
+      box-shadow: 0 0 30px rgba($_accent-cyan, 0.1);
+      position: relative;
+      overflow: hidden;
+      
+      // 叠加渐变
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 22, 40, 0.3) 0%,
+          transparent 50%,
+          rgba(10, 22, 40, 0.3) 100%
+        );
+        pointer-events: none;
+      }
     }
   }
 
   @media screen and (max-width: 1120px) {
     .section4 {
+      .description {
+        height: auto; // 小屏幕时恢复自适应高度
+        padding-right: 0; // 小屏幕时移除右侧间距
+      }
+      
       .right-pic {
-        min-height: 600px;
+        height: 400px;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// 响应式 - 小屏幕
+@media screen and (max-width: 768px) {
+  .home-section {
+    padding: 20px;
+    
+    .section1 {
+      height: 60vh;
+      
+      .mask {
+        > .web-title {
+          font-size: 32px;
+          text-align: center;
+          padding: 0 20px;
+        }
+      }
+    }
+    
+    .business-area {
+      .business-card {
+        height: auto;
+        
+        .card-content {
+          flex-direction: column;
+          
+          .card-title {
+            width: 100%;
+            padding: 15px;
+            border-right: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          }
+        }
       }
     }
   }

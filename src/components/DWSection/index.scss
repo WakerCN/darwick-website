@@ -1,5 +1,79 @@
+// ========================================
+// DWSection 区块组件 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-gold: #d4af37;
+$_accent-gold-light: #ffdf80;
+$_text-primary: #ffffff;
+
 .DWSection {
+  margin-bottom: 60px;
+  
+  // 滚动渐入动画
+  &.animate-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  &.animate-visible {
+    animation: sectionFadeIn 0.8s ease forwards;
+  }
+  
+  // 标题样式
+  .ant-typography {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px !important;
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: $_text-primary !important;
+    position: relative;
+    padding-bottom: 15px;
+    
+    // 底部金色渐变线
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, $_accent-gold, $_accent-gold-light, transparent);
+      border-radius: 2px;
+      box-shadow: 0 0 15px rgba($_accent-gold, 0.4);
+    }
+  }
+  
   .title-icon {
-    display: inline;
+    display: inline-flex;
+    font-size: 28px;
+    color: $_accent-cyan;
+    filter: drop-shadow(0 0 8px rgba($_accent-cyan, 0.5));
+    animation: iconPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba($_accent-cyan, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba($_accent-cyan, 0.8));
   }
 }
