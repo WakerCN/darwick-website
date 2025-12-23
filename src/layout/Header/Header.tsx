@@ -108,7 +108,7 @@ export function Header() {
             size="large"
             color="default"
             variant="filled"
-            icon={<DWICon iconName="language" />}
+            icon={<DWICon iconName="language" color="#ffffff" />}
             onClick={changeLanguage}
           />
         </Tooltip>
