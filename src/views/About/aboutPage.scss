@@ -1,20 +1,139 @@
+// ========================================
+// About 页面 - 深邃海洋工业风
+// ========================================
+
+// 主色调变量（本地定义）
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_text-primary: #ffffff;
+$_text-secondary: rgba(255, 255, 255, 0.85);
+
 .about-view {
-  // height: calc(100vh - 100px);
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 80px);
   @include common.view-padding;
+  position: relative;
+  z-index: 1;
 
   .content {
     display: flex;
     height: calc(100% - 32px);
+    gap: 30px;
 
     .aside {
-      width: 200px;
-      height: 100%;
+      width: 220px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      
+      // 玻璃态侧边栏
+      .ant-menu {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        
+        .ant-menu-item {
+          margin: 4px 0;
+          border-radius: 10px;
+          color: $_text-secondary;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: rgba($_accent-cyan, 0.1);
+            color: $_accent-cyan-light;
+          }
+          
+          &.ant-menu-item-selected {
+            background: linear-gradient(135deg, rgba($_accent-cyan, 0.2) 0%, rgba($_accent-cyan, 0.1) 100%);
+            color: $_accent-cyan-light;
+            border-left: 3px solid $_accent-cyan;
+            box-shadow: 0 0 15px rgba($_accent-cyan, 0.1);
+            
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
     }
 
     .right {
-      width: calc(100% - 200px);
+      flex: 1;
       padding: 0 20px;
+      
+      // 内容区域玻璃态卡片
+      .content-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          border-color: rgba($_accent-cyan, 0.2);
+          box-shadow: 0 0 30px rgba($_accent-cyan, 0.05);
+        }
+      }
+      
+      // 标题样式
+      .ant-typography {
+        color: $_text-primary !important;
+        
+        &.ant-typography-secondary {
+          color: $_text-secondary !important;
+        }
+      }
+      
+      // 图片样式
+      .ant-image {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+          border-color: rgba($_accent-cyan, 0.3);
+          box-shadow: 0 0 20px rgba($_accent-cyan, 0.1);
+        }
+      }
+    }
+  }
+}
+
+// 响应式
+@media screen and (max-width: 900px) {
+  .about-view {
+    padding: 20px;
+    
+    .content {
+      flex-direction: column;
+      
+      .aside {
+        width: 100%;
+        position: static;
+        
+        .ant-menu {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          
+          .ant-menu-item {
+            flex: none;
+          }
+        }
+      }
+      
+      .right {
+        width: 100%;
+        padding: 0;
+      }
     }
   }
 }
