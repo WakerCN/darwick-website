@@ -1,3 +1,20 @@
+// ========================================
+// 全局样式 - 深邃海洋工业风
+// ========================================
+
+// 导入Google字体
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+// 主色调变量（本地定义）
+$_primary-dark: #0a1628;
+$_primary-medium: #1e3a5f;
+$_primary-light: #2d5a87;
+$_accent-cyan: #00d4ff;
+$_accent-cyan-light: #7aeaff;
+$_text-primary: #ffffff;
+$_transition-normal: 0.3s;
+$_gradient-primary: linear-gradient(135deg, $_primary-dark 0%, $_primary-medium 50%, $_primary-light 100%);
+
 html,
 body,
 #root {
@@ -6,22 +23,32 @@ body,
   height: 100vh;
   width: 100vw;
   min-width: 880px;
-  color: rgba(0, 0, 0, 0.88);
   overflow-y: auto;
-
-  // &::-webkit-scrollbar {
-  //   width: 0;
-  //   height: 0;
-  //   background-color: transparent;
-  // }
-}
-
-.webMain {
-  // &::-webkit-scrollbar {
-  //   width: 0;
-  //   height: 0;
-  //   background-color: transparent;
-  // }
+  font-family: 'Rajdhani', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  
+  // 深蓝渐变背景
+  background: $_gradient-primary;
+  background-attachment: fixed;
+  color: $_text-primary;
+  
+  // 自定义滚动条
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $_accent-cyan, $_primary-light);
+    border-radius: 4px;
+    
+    &:hover {
+      background: linear-gradient(180deg, $_accent-cyan-light, $_accent-cyan);
+    }
+  }
 }
 
 * {
@@ -29,9 +56,50 @@ body,
 }
 
 .webMain {
-  height: calc(100% - 100px);
+  height: calc(100% - 80px);
   width: 100%;
   overflow-y: auto;
+  position: relative;
+  
+  // 添加粒子背景效果
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(0, 212, 255, 0.2), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(2px 2px at 130px 80px, rgba(212, 175, 55, 0.2), transparent),
+      radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.3), transparent);
+    background-size: 200px 200px;
+    animation: particle-float 20s linear infinite;
+    opacity: 0.6;
+    z-index: 0;
+  }
+  
+  // 自定义滚动条
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $_accent-cyan, $_primary-light);
+    border-radius: 4px;
+    
+    &:hover {
+      background: linear-gradient(180deg, $_accent-cyan-light, $_accent-cyan);
+    }
+  }
 }
 
 // 字体图标
@@ -41,6 +109,12 @@ body,
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  
+  // 覆盖 SVG symbol 内部硬编码的 fill 颜色
+  path,
+  use {
+    fill: inherit !important;
+  }
 }
 
 ul,
@@ -48,4 +122,110 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+// 链接样式
+a {
+  color: $_accent-cyan;
+  text-decoration: none;
+  transition: all $_transition-normal ease;
+  
+  &:hover {
+    color: $_accent-cyan-light;
+    text-shadow: 0 0 10px rgba($_accent-cyan, 0.5);
+  }
+}
+
+// Ant Design 组件覆盖
+.ant-typography {
+  color: $_text-primary !important;
+}
+
+.ant-btn {
+  font-family: 'Rajdhani', 'PingFang SC', sans-serif;
+  font-weight: 500;
+}
+
+// Header 按钮图标颜色强制覆盖（使用最高优先级）
+.webHeader .header-operate .opt-btn .ant-btn-icon > .icon,
+.webHeader .header-operate .opt-btn .ant-btn-icon > .anticon,
+.webHeader .header-operate .opt-btn .ant-btn-icon > svg,
+.webHeader .header-operate .opt-btn .ant-btn-icon .anticon svg,
+.webHeader .header-operate a.opt-btn .ant-btn-icon > .icon,
+.webHeader .header-operate a.opt-btn .ant-btn-icon > .anticon,
+.webHeader .header-operate a.opt-btn .ant-btn-icon > svg,
+.webHeader .header-operate a.opt-btn .ant-btn-icon .anticon svg {
+  color: $_text-primary !important;
+  fill: $_text-primary !important;
+}
+
+// hover 状态
+.webHeader .header-operate .opt-btn:hover .ant-btn-icon > .icon,
+.webHeader .header-operate .opt-btn:hover .ant-btn-icon > .anticon,
+.webHeader .header-operate .opt-btn:hover .ant-btn-icon > svg,
+.webHeader .header-operate .opt-btn:hover .ant-btn-icon .anticon svg,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon > .icon,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon > .anticon,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon > svg,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon .anticon svg {
+  color: $_accent-cyan-light !important;
+  fill: $_accent-cyan-light !important;
+}
+
+// 圆形/图标按钮 hover 金色
+.webHeader .header-operate .opt-btn.ant-btn-circle:hover .ant-btn-icon > .icon,
+.webHeader .header-operate .opt-btn.ant-btn-circle:hover .ant-btn-icon > .anticon,
+.webHeader .header-operate .opt-btn.ant-btn-circle:hover .ant-btn-icon > svg,
+.webHeader .header-operate .opt-btn.ant-btn-circle:hover .ant-btn-icon .anticon svg,
+.webHeader .header-operate .opt-btn.ant-btn-icon-only:hover .ant-btn-icon > .icon,
+.webHeader .header-operate .opt-btn.ant-btn-icon-only:hover .ant-btn-icon > .anticon,
+.webHeader .header-operate .opt-btn.ant-btn-icon-only:hover .ant-btn-icon > svg,
+.webHeader .header-operate .opt-btn.ant-btn-icon-only:hover .ant-btn-icon .anticon svg,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon > .icon,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon > .anticon,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon > svg,
+.webHeader .header-operate a.opt-btn:hover .ant-btn-icon .anticon svg {
+  color: #ffdf80 !important;
+  fill: #ffdf80 !important;
+}
+
+// 粒子动画
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+
+// 通用动画类
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fadeInUp 0.6s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fadeInUp 0.6s ease 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
