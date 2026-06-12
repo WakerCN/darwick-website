@@ -389,37 +389,97 @@ $_transition-normal: 0.3s;
   }
 }
 
-// 响应式 - 小屏幕
+// 响应式 - 小屏幕(手机竖屏)
 @media screen and (max-width: 768px) {
   .home-section {
-    padding: 20px;
-    
+    padding: 16px;
+
     .section1 {
-      height: 60vh;
-      
+      height: 50vh;
+      min-height: 320px;
+      margin-bottom: 40px;
+
       .mask {
         > .web-title {
-          font-size: 32px;
+          font-size: 28px;
           text-align: center;
           padding: 0 20px;
+          letter-spacing: 2px;
+        }
+
+        // 手机没有 hover,文案直接常显
+        .web-desc {
+          left: 16px;
+          right: 16px;
+          bottom: 16px;
+          opacity: 1;
+          font-size: 13px;
+          text-align: center;
+        }
+
+        &:hover .web-desc {
+          right: 16px;
         }
       }
     }
-    
+
     .business-area {
       .business-card {
         height: auto;
-        
+
         .card-content {
           flex-direction: column;
-          
+
           .card-title {
             width: 100%;
             padding: 15px;
+            font-size: 18px;
             border-right: none;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           }
+
+          .card-desc {
+            padding: 15px;
+            font-size: 13px;
+          }
         }
+      }
+    }
+
+    .section3 {
+      // 高度跟随图片自适应,避免大片留白
+      .image-area {
+        height: auto;
+      }
+
+      .description {
+        .list-item {
+          margin-bottom: 12px;
+          padding: 12px 15px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .section4 {
+      .description {
+        .card-item {
+          padding: 15px;
+          margin-bottom: 12px;
+
+          .service-icon {
+            font-size: 40px;
+          }
+
+          .list-item {
+            font-size: 15px;
+          }
+        }
+      }
+
+      .right-pic {
+        width: 100%;
+        height: 260px;
       }
     }
   }

@@ -176,20 +176,55 @@ $_transition-normal: 0.3s;
 @media screen and (max-width: 1000px) {
   .webHeader {
     padding: 10px 20px;
-    
+
     .left {
       .websiteName {
         font-size: 18px;
         display: none;
       }
     }
-    
+
     .header-operate {
       gap: 4px;
-      
+
       .opt-btn {
         font-size: 13px;
         padding: 4px 12px;
+      }
+    }
+  }
+}
+
+// 手机竖屏适配
+@media screen and (max-width: 768px) {
+  .webHeader {
+    height: 64px;
+    padding: 8px 12px;
+
+    .left {
+      .websiteIcon {
+        height: 40px;
+      }
+    }
+
+    .header-operate {
+      gap: 4px;
+
+      // Logo 可点击回首页,隐藏首页圆形按钮节省空间
+      .opt-btn.ant-btn-circle {
+        display: none;
+      }
+
+      .opt-btn {
+        font-size: 12px;
+        letter-spacing: 0;
+        height: 32px;
+        padding: 0 10px;
+      }
+
+      .opt-btn.ant-btn-icon-only {
+        width: 32px;
+        padding: 0;
       }
     }
   }

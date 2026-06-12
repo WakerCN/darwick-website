@@ -86,6 +86,27 @@ $_accent-cyan: #00d4ff;
   }
 }
 
+// 手机竖屏适配
+@media screen and (max-width: 768px) {
+  .brand-wall-container {
+    height: 120px;
+
+    &::before,
+    &::after {
+      width: 40px;
+    }
+
+    .brand-wall {
+      height: 90px;
+
+      .brand-card {
+        padding: 10px;
+        margin: 0 8px;
+      }
+    }
+  }
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
