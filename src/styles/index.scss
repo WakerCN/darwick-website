@@ -21,8 +21,9 @@ body,
   margin: 0;
   padding: 0;
   height: 100vh;
+  // 移动端浏览器地址栏收起/展开时使用动态视口高度
+  height: 100dvh;
   width: 100vw;
-  min-width: 880px;
   overflow-y: auto;
   font-family: 'Rajdhani', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   
@@ -187,6 +188,13 @@ a {
 .webHeader .header-operate a.opt-btn:hover .ant-btn-icon .anticon svg {
   color: #ffdf80 !important;
   fill: #ffdf80 !important;
+}
+
+// 移动端:Header 压缩为 64px,滚动容器高度同步
+@media screen and (max-width: 768px) {
+  .webMain {
+    height: calc(100% - 64px);
+  }
 }
 
 // 粒子动画

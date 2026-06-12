@@ -58,6 +58,23 @@ $_text-primary: #ffffff;
   }
 }
 
+// 手机竖屏适配
+@media screen and (max-width: 768px) {
+  .DWSection {
+    margin-bottom: 40px;
+
+    .ant-typography {
+      font-size: 20px;
+      margin-bottom: 20px !important;
+      letter-spacing: 1px;
+    }
+
+    .title-icon {
+      font-size: 22px;
+    }
+  }
+}
+
 @keyframes sectionFadeIn {
   from {
     opacity: 0;
