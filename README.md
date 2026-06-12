@@ -7,7 +7,7 @@
 | 环境 | 地址 | 说明 |
 | --- | --- | --- |
 | GitHub Pages | <https://wakercn.github.io/darwick-website/> | 当前在线演示,由 GitHub Actions 自动构建部署 |
-| 原生产环境 | ~~http://www.darwickmarine.com/~~ | 早期交付时使用的域名,现已不再维护 |
+| 正式域名 | <http://www.darwickmarine.com/> | 交付客户的正式线上地址 |
 
 ## 🛠️ 技术栈
 
