@@ -80,7 +80,10 @@ export const router = createBrowserRouter([
       }
     ]
   }
-]);
+], {
+  // 部署在子路径(如 GitHub Pages)时,跟随 Vite 的 base 配置
+  basename: import.meta.env.BASE_URL
+});
 
 export const routerName = [
   {
