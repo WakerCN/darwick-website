@@ -105,25 +105,14 @@ $_text-secondary: rgba(255, 255, 255, 0.85);
       .aside {
         width: 100%;
         position: static;
-
-        // Affix 包裹层带内联绝对定位样式(top: 170px),
-        // 移动端需用 !important 强制回到文档流,否则菜单会悬浮叠在内容上
-        > div,
-        .ant-affix {
-          position: static !important;
-          top: auto !important;
-          width: 100% !important;
-          height: auto !important;
-        }
-
+        
         .ant-menu {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-
+          
           .ant-menu-item {
             flex: none;
-            width: auto;
           }
         }
       }
