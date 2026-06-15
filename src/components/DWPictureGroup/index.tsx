@@ -37,18 +37,22 @@ export const DWPicktureGroup: React.FC<DWPicktureGroupProps> = (props) => {
               xl={8}
               xxl={8}
             >
-              <Image
-                className="card-img"
-                src={item.url}
-                width={'100%'}
-                height={200}
-                style={{ objectFit: 'cover' }}
-              />
-              {showDesc && (
-                <div className="desc">
-                  <Typography.Text>{t(`picture.${item.key}`)}</Typography.Text>
-                </div>
-              )}
+              <div className="card-inner">
+                <Image
+                  className="card-img"
+                  src={item.url}
+                  width={'100%'}
+                  height={200}
+                  style={{ objectFit: 'cover' }}
+                />
+                {showDesc && (
+                  <div className="desc">
+                    <Typography.Text>
+                      {t(`picture.${item.key}`)}
+                    </Typography.Text>
+                  </div>
+                )}
+              </div>
             </Col>
           );
         })}

@@ -7,9 +7,12 @@ $_accent-cyan: #00d4ff;
 $_text-secondary: rgba(255, 255, 255, 0.85);
 
 .pic-wrap {
-  .card-wrap {
+  // 卡片视觉样式放在内层 .card-inner 上,Col(.card-wrap)只负责 gutter 间距,
+  // 否则卡片背景会铺满整列、相邻卡片紧贴,导致水平方向没有间隙
+  .card-inner {
+    height: 100%;
     padding: 15px;
-    
+
     // 玻璃态卡片
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -17,18 +20,18 @@ $_text-secondary: rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     transition: all 0.3s ease;
-    
+
     &:hover {
       background: rgba(255, 255, 255, 0.08);
       border-color: rgba($_accent-cyan, 0.3);
       box-shadow: 0 0 25px rgba($_accent-cyan, 0.1);
       transform: translateY(-5px);
-      
+
       .card-img {
         transform: scale(1.03);
       }
     }
-    
+
     .card-img {
       width: 100%;
       height: 200px;
