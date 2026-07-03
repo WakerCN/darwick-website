@@ -20,7 +20,10 @@ $_transition-normal: 0.3s;
   position: sticky;
   top: 0;
   z-index: 999;
-  
+  // 让毛玻璃 Header 独立合成,避免 backdrop-filter 与内容滚动互相牵连重绘。
+  transform: translateZ(0);
+  will-change: transform;
+
   // 毛玻璃效果
   background: rgba(10, 22, 40, 0.85);
   backdrop-filter: blur(20px);
