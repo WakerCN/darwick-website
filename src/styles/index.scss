@@ -2,8 +2,8 @@
 // 全局样式 - 深邃海洋工业风
 // ========================================
 
-// 导入Google字体
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+// Google 字体改为在 index.html 中非阻塞加载(preconnect + media 切换),
+// 避免 CSS 顶部 @import 阻塞首屏渲染。
 
 // 主色调变量（本地定义）
 $_primary-dark: #0a1628;

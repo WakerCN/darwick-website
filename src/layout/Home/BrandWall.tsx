@@ -11,7 +11,13 @@ import './brand-wall.scss';
 const BrandCard: React.FC<Brand> = ({ logo, title }) => {
   return (
     <div className="brand-card">
-      <img src={logo} className="brand-logo" alt={title} />
+      <img
+        src={logo}
+        className="brand-logo"
+        alt={title}
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   );
 };

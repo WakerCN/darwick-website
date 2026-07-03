@@ -18,7 +18,7 @@ export const DWFooter: React.FC = () => {
   return (
     <footer className="webFooter">
       <div className="footer-left">
-        <img className="logo" src={Logo} />
+        <img className="logo" src={Logo} loading="lazy" decoding="async" />
         <div className="logo-desc">
           <Text strong>{t('footer.company')}</Text>
         </div>

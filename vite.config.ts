@@ -15,6 +15,16 @@ export default defineConfig({
   base: '/',
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        // 拆分第三方依赖为独立 vendor chunk,业务代码变更时不失效,利于长期缓存
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router'],
+          'antd-vendor': ['antd', '@ant-design/icons'],
+          'i18n-vendor': ['i18next', 'react-i18next'],
+        },
+      },
+    },
   },
   plugins: [
     react(),
