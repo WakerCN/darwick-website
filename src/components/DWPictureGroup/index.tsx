@@ -43,6 +43,7 @@ export const DWPicktureGroup: React.FC<DWPicktureGroupProps> = (props) => {
                   src={item.url}
                   width={'100%'}
                   height={200}
+                  loading="lazy"
                   style={{ objectFit: 'cover' }}
                 />
                 {showDesc && (
