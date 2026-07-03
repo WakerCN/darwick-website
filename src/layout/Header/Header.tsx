@@ -8,7 +8,7 @@
 import { DWICon } from '@/components/DWIcon';
 import './index.scss';
 
-import Logo from '@/assets/company-logo.png';
+import Logo from '@/assets/company-logo.webp';
 import { BookFilled, HomeOutlined } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 import { useTranslation } from 'react-i18next';

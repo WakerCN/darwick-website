@@ -5,7 +5,7 @@
  * @LastEditors  : StarOne
  * @Description  :
  */
-import Logo from '@/assets/company-logo.png';
+import Logo from '@/assets/company-logo.webp';
 import { Typography } from 'antd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';

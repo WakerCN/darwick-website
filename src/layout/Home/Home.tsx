@@ -141,6 +141,7 @@ export const Home: React.FC = () => {
                     width={'100%'}
                     style={{ objectFit: 'contain' }}
                     src={item.url}
+                    loading="lazy"
                   />
                 </div>
               );
