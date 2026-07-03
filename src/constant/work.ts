@@ -5,16 +5,16 @@
  * @LastEditors  : StarOne
  * @Description  :
  */
-import pic2 from '@/assets/work/02-ash-grit-blasting.jpg';
-import pic3 from '@/assets/work/03-balance-test.jpg';
-import pic4 from '@/assets/work/04-measuring.jpg';
-import pic5 from '@/assets/work/05-turbo-blade-repairs.jpg';
-import pic6 from '@/assets/work/06-LaserWeldingForBlades.jpg';
-import pic8 from '@/assets/work/08-LaserAidedReclamation.jpg';
-import pic9 from '@/assets/work/09-governor-overhaul.jpg';
-import pic10 from '@/assets/work/10-bench-test.jpg';
-import pic11 from '@/assets/work/11-bench-test.jpg';
-import pic12 from '@/assets/work/12-onboard.jpg';
+import pic2 from '@/assets/work/02-ash-grit-blasting.webp';
+import pic3 from '@/assets/work/03-balance-test.webp';
+import pic4 from '@/assets/work/04-measuring.webp';
+import pic5 from '@/assets/work/05-turbo-blade-repairs.webp';
+import pic6 from '@/assets/work/06-LaserWeldingForBlades.webp';
+import pic8 from '@/assets/work/08-LaserAidedReclamation.webp';
+import pic9 from '@/assets/work/09-governor-overhaul.webp';
+import pic10 from '@/assets/work/10-bench-test.webp';
+import pic11 from '@/assets/work/11-bench-test.webp';
+import pic12 from '@/assets/work/12-onboard.webp';
 
 export interface Picture {
   key: string;

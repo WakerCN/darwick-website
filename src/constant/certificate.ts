@@ -10,10 +10,10 @@ import type { Picture } from './work';
 
 import pic1 from '@/assets/certification/certificate-dtc.jpg';
 import pic2 from '@/assets/certification/certificate-wnk.jpg';
-import pic3 from '@/assets/certification/MES.png';
-import pic4 from '@/assets/certification/MET.png';
-import pic5 from '@/assets/certification/woodward.png';
-import pic6 from '@/assets/certification/ISO.jpeg';
+import pic3 from '@/assets/certification/MES.webp';
+import pic4 from '@/assets/certification/MET.webp';
+import pic5 from '@/assets/certification/woodward.webp';
+import pic6 from '@/assets/certification/ISO.webp';
 
 export const certificatePictureList: Picture[] = [
   {
