@@ -28,8 +28,9 @@ body,
   font-family: 'Rajdhani', 'PingFang SC', 'Microsoft YaHei', sans-serif;
   
   // 深蓝渐变背景
+  // 注意:滚动实际发生在 .webMain 容器内,body 背景本就不随之滚动,
+  // 因此不使用 background-attachment: fixed —— 它会强制滚动时整页重绘,导致闪烁。
   background: $_gradient-primary;
-  background-attachment: fixed;
   color: $_text-primary;
   
   // 自定义滚动条
@@ -81,6 +82,11 @@ body,
     animation: particle-float 20s linear infinite;
     opacity: 0.6;
     z-index: 0;
+    // 该伪元素是 position: fixed,却位于自身滚动的 .webMain 容器内。
+    // 提升为独立合成层,避免容器滚动时被反复光栅化而引起整屏闪烁。
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
   
   // 自定义滚动条
