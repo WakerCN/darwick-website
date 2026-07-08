@@ -6,6 +6,7 @@
  * @Description  :
  */
 import { PageBreadcrumb } from '@/layout/PageBreadcrumb';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { Affix, Menu, type MenuProps } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router';
@@ -20,6 +21,12 @@ export const AboutPage: React.FC = () => {
 
   const { t } = useTranslation();
 
+  // 移动端不使用 Affix:其内部会在滚动吸顶时动态改写内联样式,
+  // 与固定的 position: absolute 内联样式及 CSS 媒体查询相互冲突,
+  // 曾导致菜单悬浮叠在内容上(见 PR #4 / revert PR #5)。
+  // 移动端直接渲染 Menu,规避该冲突。
+  const isMobile = useMediaQuery('(max-width: 900px)');
+
   useEffect(() => {
     setActiveKey(location.pathname);
   }, [location.pathname, navigate]);
@@ -28,35 +35,45 @@ export const AboutPage: React.FC = () => {
     navigate(info.key);
   };
 
+  const menu = (
+    <Menu
+      selectedKeys={[activeKey]}
+      onClick={onClick}
+      items={[
+        {
+          label: t('menu.workshop'),
+          key: '/about/workshop'
+        },
+        {
+          label: t('menu.certification'),
+          key: '/about/certificate'
+        },
+        {
+          label: t('menu.company'),
+          key: '/about/company'
+        },
+        {
+          label: t('menu.business'),
+          key: '/about/business'
+        }
+      ]}
+    />
+  );
+
   return (
     <div className="about-view">
       <PageBreadcrumb />
       <div className="content">
         <div className="aside">
-          <Affix style={{ position: 'absolute', top: '170px', width: '200px' }}>
-            <Menu
-              selectedKeys={[activeKey]}
-              onClick={onClick}
-              items={[
-                {
-                  label: t('menu.workshop'),
-                  key: '/about/workshop'
-                },
-                {
-                  label: t('menu.certification'),
-                  key: '/about/certificate'
-                },
-                {
-                  label: t('menu.company'),
-                  key: '/about/company'
-                },
-                {
-                  label: t('menu.business'),
-                  key: '/about/business'
-                }
-              ]}
-            />
-          </Affix>
+          {isMobile ? (
+            menu
+          ) : (
+            <Affix
+              style={{ position: 'absolute', top: '170px', width: '200px' }}
+            >
+              {menu}
+            </Affix>
+          )}
         </div>
         <div className="right">
           <Outlet />
